@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The History — People-Centered Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141110;--cream:#FDF6E8;--dust:#C9857E;--brick:#D64525;--amber:#F2A33C;--yellow:#FFC845;--green:#4F9B54;--purple:#A66BC2;--blue:#5A93E8;--muted:#9A8F82}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+.logo{font-family:'Archivo Black';font-size:13px}.logo a{color:var(--amber);text-decoration:none}
+.btn{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:8px 13px;border:2px solid var(--cream);background:transparent;color:var(--cream);cursor:pointer;border-radius:2px;font-family:inherit}
+.btn:hover,.btn.on{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.tools{display:flex;gap:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+header.top{padding:120px 0 70px;border-bottom:1px solid #332C27}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--amber);margin-bottom:16px}
+h1{font-family:'Archivo Black';font-size:clamp(42px,7.6vw,92px);line-height:.94;letter-spacing:-.025em;margin-bottom:22px}
+.stand{font-family:'Fraunces';font-size:clamp(19px,2vw,26px);line-height:1.38;max-width:52ch;color:#E8DCC8}
+/* era */
+.era{border-bottom:1px solid #332C27;padding:64px 0 46px}
+.sidequote{border-left:6px solid var(--amber);padding:8px 0 8px 20px;margin:0 0 34px;max-width:70ch;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(19px,2.1vw,26px);line-height:1.32;color:#F0E6D4}
+.sidequote cite{display:block;margin-top:10px;font-family:'DM Sans';font-style:normal;font-size:12.5px;letter-spacing:.05em;color:var(--dust)}
+@media(max-width:900px){.sidequote{border-left:6px solid var(--amber);padding:8px 0 8px 20px;margin:0 0 34px;max-width:70ch;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(19px,2.1vw,26px);line-height:1.32;color:#F0E6D4}}
+.eraintro{font-family:'Fraunces',Georgia,serif;font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:#CFC3AF;max-width:70ch;margin:-18px 0 34px}
+.eraintro strong{color:var(--amber)}
+.era-head{display:flex;align-items:baseline;gap:18px;margin-bottom:34px;flex-wrap:wrap}
+.era-num{font-family:'Archivo Black';font-size:13px;color:var(--ink);background:var(--amber);width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex:none}
+.era-name{font-family:'Archivo Black';font-size:clamp(19px,2.5vw,30px);letter-spacing:-.01em;line-height:1.05}
+.era-dates{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);font-weight:700}
+/* entry */
+.entry{display:grid;grid-template-columns:132px 1fr;gap:26px;padding:26px 0;border-top:1px solid #251F1B}
+.entry:first-of-type{border-top:0}
+.date{font-family:'Archivo Black';font-size:15px;color:var(--yellow);line-height:1.3;padding-top:3px}
+.entry h3{font-family:'Fraunces';font-weight:700;font-size:clamp(20px,2.2vw,27px);line-height:1.16;margin-bottom:11px}
+.entry p{font-size:17px;color:#DCD0BC;max-width:66ch;margin-bottom:12px}
+.flag{background:#2A2113;border-left:3px solid var(--amber);padding:11px 15px;font-size:14px;color:#D9C89E;margin-top:12px}
+.flag b{color:var(--amber)}
+.prop{border:2px dashed var(--purple);background:rgba(166,107,194,.09);border-radius:4px;padding:20px;margin:22px 0}
+.prop .lbl{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--purple);margin-bottom:9px}
+.anchorlink{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ink);background:var(--dust);padding:4px 9px;border-radius:2px;margin-top:9px;text-decoration:none}
+.pull{font-family:'Fraunces';font-style:italic;font-size:clamp(21px,2.6vw,34px);line-height:1.24;color:var(--yellow);max-width:26ch;margin:0}
+.pullrow{padding:56px 0;border-bottom:1px solid #332C27}
+footer{padding:54px 0 80px;text-align:center;color:var(--muted);font-size:13.5px}
+footer p{max-width:72ch;margin:0 auto}
+.cta{margin-top:26px;display:flex;gap:11px;flex-wrap:wrap;justify-content:center}
+.cta a{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:13px 19px;border:2px solid var(--cream);color:var(--cream);text-decoration:none;border-radius:2px}
+.cta a:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+@media(max-width:760px){.entry{grid-template-columns:1fr;gap:8px}.date{font-size:14px}}
+
+.erachips a{display:flex;gap:7px;align-items:baseline}
+.erachips a b{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:11px;opacity:.55}
+.erachips a.on b{opacity:1}
+.era{scroll-margin-top:145px}
+/* ===== SHARED CHROME (nav + footer) ===== */
+.pcpnav{position:sticky;top:0;z-index:90;background:#17140F;color:#FDF6E8;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif}
+.cwrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.pcpnav .cwrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:1440px}
+.pcplogo{font-family:'Archivo Black',Impact,sans-serif;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:#FDF6E8;white-space:nowrap}
+.pcplogo em{font-style:normal;color:#F2A33C}
+.pcplinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.pcplinks a{text-decoration:none;opacity:.82;color:#FDF6E8;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.pcplinks a:hover{opacity:1;color:#FFC845}
+.pcplinks a.on{opacity:1;color:#F2A33C;border-bottom-color:#F2A33C}
+.pcpcta{background:#D64525;color:#fff;padding:12px 18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap}
+.pcpcta:hover{background:#FFC845;color:#17140F}
+@media(max-width:1180px){.pcplogo em{display:none}}
+@media(max-width:1120px){.pcplinks{gap:13px;font-size:11px;letter-spacing:.07em}}
+@media(max-width:860px){.pcpnav .cwrap{height:auto;padding:9px 16px;flex-wrap:wrap;row-gap:8px}
+ .pcplinks{order:3;width:100%;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px}}
+
+/* ===== SUBNAV ===== */
+.subnav{position:sticky;z-index:80;background:#F3E8D4;color:#17140F;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif;top:72px}
+.subnav .cwrap{display:flex;align-items:center;gap:10px;height:60px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subnav .slab2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-right:6px;white-space:nowrap}
+.snl{display:flex;gap:6px;align-items:center;flex:1}
+.snl a,.snl button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snl a:hover,.snl button:hover{border-color:#17140F;background:#FDF6E8}
+.snl a.on,.snl button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+.snr{display:flex;gap:6px;margin-left:auto}
+.snr button,.snr a{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snr button:hover,.snr a:hover{border-color:#17140F;background:#FDF6E8}
+.snr button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+main section,main .panel{scroll-margin-top:145px}
+@media(max-width:860px){.subnav{top:auto;position:sticky;top:0}.subnav .slab2{display:none}}
+
+/* ===== FOOTER ===== */
+.pcpfoot{background:#17140F;color:#FDF6E8;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55}
+.fclose{background:#D64525;color:#fff;border-bottom:4px solid #17140F}
+.fclose .cwrap{padding:64px 28px;text-align:center}
+.fclose p{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(28px,5vw,64px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:52px 28px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:'DM Sans';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F2A33C;margin:0 0 11px}
+.fgrid a{display:block;opacity:.8;text-decoration:none;color:#FDF6E8;margin-bottom:7px;font-size:14px}
+.fgrid a:hover{opacity:1;color:#FFC845}
+.fbase{border-top:1px solid rgba(253,246,232,.2)}
+.fbase .cwrap{padding:20px 28px;font-size:12px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:1080px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr 1fr}}
+
+/* ===== relocated from the scrollytell ===== */
+.mv{border-top:4px solid var(--ink);padding:46px 28px;max-width:1240px;margin:0 auto}
+.mv h2{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(24px,3.4vw,42px);line-height:1.02;letter-spacing:-.02em;margin-bottom:18px;max-width:24ch}
+.mv p{margin-bottom:14px;max-width:70ch}
+.mv .eyebrow{margin-bottom:12px;opacity:.7}
+.mv .banner{border-left:8px solid #D64525;padding:10px 0 10px 20px;font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,2.2vw,27px);line-height:1.3;margin:22px 0}
+.mv .banner p{margin:0;font-family:inherit}
+.mv .statelist{display:grid;gap:10px;margin:20px 0}
+.mv .statelist div{border-left:4px solid rgba(23,20,15,.3);padding-left:14px;font-size:16px}
+.mv .statelist b{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:13px;letter-spacing:.06em}
+.mv .wall{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.mv .wall>div{border:3px solid currentColor;border-radius:3px;padding:20px}
+.mv .wall h3{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:15px;letter-spacing:.09em;margin-bottom:10px}
+.mv .wall .a{background:rgba(23,20,15,.05)}
+.mv .wall .b{background:rgba(214,69,37,.09)}
+.mv .quote{border-left:6px solid #4F9B54;padding:5px 0 5px 17px;margin:16px 0;font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.38}
+.mv .quote cite{display:block;margin-top:8px;font-family:'DM Sans';font-style:normal;font-size:13px;opacity:.7}
+.mv .hl{font-style:normal;background:rgba(255,200,69,.55);padding:0 3px}
+.mv .flag{background:#FFF3D6;border-left:5px solid #F2A33C;color:#6a5320;padding:13px 16px;font-size:14.5px;margin-top:16px}
+.mv .lede{font-family:'Fraunces',Georgia,serif;font-size:clamp(19px,2vw,24px);line-height:1.36}
+@media(max-width:820px){.mv .wall{grid-template-columns:1fr}}
+
+/* ===== BOTTOM SUBNAV (shared) ===== */
+.botnav{position:fixed;left:0;right:0;bottom:0;top:auto;height:auto;z-index:95;background:#17140F;border-top:3px solid #17140F;
+  box-shadow:0 -6px 26px rgba(23,20,15,.22);font-family:'DM Sans',system-ui,sans-serif}
+.botnav .bwrap{display:flex;align-items:stretch;width:100%}
+.bnlab{flex:none;display:flex;align-items:center;padding:0 18px;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:#F2A33C;border-right:1px solid rgba(253,246,232,.16);white-space:nowrap}
+.bnitems{display:flex;flex:1;min-width:0}
+.bnitems a,.bnitems button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font:inherit;background:transparent;border:none;border-right:1px solid rgba(253,246,232,.16);
+  color:#FDF6E8;padding:12px 6px;cursor:pointer;text-decoration:none;transition:background .14s,color .14s}
+.bnitems a:last-child,.bnitems button:last-child{border-right:none}
+.bnitems .bnum{font-family:'Archivo Black',Impact,sans-serif;font-size:10px;letter-spacing:.04em;color:#F2A33C;line-height:1}
+.bnitems .blab{font-size:11.5px;font-weight:700;letter-spacing:.03em;line-height:1.15;text-align:center;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.bnitems a:hover,.bnitems button:hover{background:rgba(242,163,60,.16)}
+.bnitems a.on,.bnitems button.on{background:#F2A33C;color:#17140F}
+.bnitems a.on .bnum,.bnitems button.on .bnum{color:#17140F}
+.bntools{flex:none;display:flex;border-left:1px solid rgba(253,246,232,.16)}
+.bntools button,.bntools a{display:flex;align-items:center;font:inherit;font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;background:transparent;border:none;border-right:1px solid rgba(253,246,232,.16);
+  color:#FDF6E8;padding:0 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bntools button:last-child,.bntools a:last-child{border-right:none}
+.bntools button:hover,.bntools a:hover{background:rgba(242,163,60,.16);color:#F2A33C}
+.bntools button.on{background:#FFC845;color:#17140F}
+body{padding-bottom:66px}
+@media(max-width:900px){
+  .bnlab{display:none}
+  .bnitems .blab{font-size:10px}
+  .bnitems a,.bnitems button{padding:10px 3px}
+  .bntools button,.bntools a{padding:0 10px;font-size:9.5px}
+  body{padding-bottom:60px}
+}
+@media(max-width:600px){.bnitems .blab{display:none}.bnitems .bnum{font-size:12px}}
+
+/* nine eras must all fit — no horizontal scrolling */
+.erabar a{padding:11px 2px}
+.erabar .blab{font-size:11px;letter-spacing:0}
+@media(max-width:1240px){.erabar .blab{font-size:9.5px}}
+@media(max-width:1040px){.erabar .blab{display:none}.erabar .bnum{font-size:13px}}
+
+/* ===== TIMELINE: light bottom subnav ===== */
+.botnav{background:#FDF6E8;border-top:3px solid #17140F;box-shadow:0 -8px 26px rgba(23,20,15,.34)}
+.bnlab{color:#A8401F;border-right-color:rgba(23,20,15,.20)}
+.bnitems a,.bnitems button{color:#17140F;border-right-color:rgba(23,20,15,.20)}
+.bnitems .bnum{color:#B3401F}
+.bnitems a:hover,.bnitems button:hover{background:rgba(242,163,60,.30)}
+.bnitems a.on,.bnitems button.on{background:#17140F;color:#FDF6E8}
+.bnitems a.on .bnum,.bnitems button.on .bnum{color:#F2A33C}
+.bntools{border-left-color:rgba(23,20,15,.20)}
+.bntools button,.bntools a{color:#17140F;border-right-color:rgba(23,20,15,.20)}
+.bntools button:hover,.bntools a:hover{background:rgba(242,163,60,.30);color:#17140F}
+.bntools button.on{background:#17140F;color:#FFC845}
+</style>
+</head>
+<body>
+<nav class="pcpnav"><div class="cwrap">
+  <a class="pcplogo" href="pcp-home.html">ADVANCEMENT PROJECT <em>&middot; PEOPLE-CENTERED POWER</em></a>
+  <div class="pcplinks"><a href="how-it-happens.html">How It Happens</a><a href="place-houston.html">Places</a><a href="history.html" class="on">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a></div>
+  <a class="pcpcta" href="find-your-campaign.html">Find your campaign</a>
+</div></nav>
+<nav class="botnav" id="botnav" aria-label="Era navigation"><div class="bwrap">
+  <span class="bnlab">Jump to</span>
+  <div class="bnitems erabar"><a href="#era1"><span class="bnum">1</span><span class="blab">Pre-1865</span></a><a href="#era2"><span class="bnum">2</span><span class="blab">1865–1877</span></a><a href="#era3"><span class="bnum">3</span><span class="blab">1875–1900</span></a><a href="#era4"><span class="bnum">4</span><span class="blab">1900s–1940s</span></a><a href="#era5"><span class="bnum">5</span><span class="blab">1950s–1970s</span></a><a href="#era6"><span class="bnum">6</span><span class="blab">1980s–1990s</span></a><a href="#era7"><span class="bnum">7</span><span class="blab">2000s–2010s</span></a><a href="#era8"><span class="bnum">8</span><span class="blab">2020–2024</span></a><a href="#era9"><span class="bnum">9</span><span class="blab">2020s–Now</span></a></div>
+  <div class="bntools">
+    <button id="eprev">&larr;</button>
+    <button id="enext">&rarr;</button>
+    <button id="etop">&uarr; Top</button>
+  </div>
+</div></nav>
+
+
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">150 years</div>
+  <h1>The methods have changed.<br>The purpose has not.</h1>
+  <p class="stand">Every era on this timeline begins the same way: a community builds something. Then the decision gets ripped from their reach. Read it end to end. There is a direct line from slavery through to today&rsquo;s growing efforts to steal decisionmaking power from Black and brown communities.</p>
+</div></header>
+
+<main class="wrap">
+
+<!-- ERA 1 -->
+<section class="era" id="era1">
+  <div class="era-head"><span class="era-num">1</span><span class="era-name">Pre-Civil War</span><span class="era-dates">Pre-1865</span></div>
+  <p class="eraintro">Before there was a fight over local power, there was a system built to make sure Black people had none at all. Every mechanism that follows &mdash; the override, the takeover, the appointed board &mdash; is a descendant of this arrangement.</p>
+  <div class="entry">
+    <div class="date">Pre-1865</div>
+    <div>
+      <h3>The original power grab</h3>
+      <p>Before 1865, Black people in the United States had no legal personhood. Slavery meant total control over Black life, enforced by law and upheld by violence. Black people were denied all rights to self-governance, land ownership, and power. Plantation owners in the South exercised total legal and economic control. State and local governments were organized entirely around the preservation of white supremacy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ERA 2 -->
+<section class="era" id="era2">
+  <div class="era-head"><span class="era-num">2</span><span class="era-name">The Reconstruction Era</span><span class="era-dates">1865–1877</span></div>
+  <p class="eraintro">For a brief window, Black communities across the South built and ran things: schools, hospitals, town governments, local law. This era is the high-water mark of what was possible &mdash; and the beginning of the legal architecture built to end it.</p>
+  <div class="entry">
+    <div class="date">April 9, 1865</div>
+    <div>
+      <h3>The End of the Civil War</h3>
+      <p>Communities of newly freed and formerly enslaved people began building power for themselves. They built schools and hospitals. They gained political, social, and economic power. They were elected to local and state offices, passed legislation, voted, and organized for one another.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">April 14, 1865</div>
+    <div>
+      <h3>The Assassination of Abraham Lincoln · Presidency of Andrew Johnson</h3>
+      <p>Reconstruction formally began when Andrew Johnson was sworn in as the 17th President. Johnson outlined how new state governments would be created. States could manage their own affairs — and some former Confederate states used that latitude to enact the Black codes, laws intended to maintain white supremacy as the law of the land. The codes required Black people to sign yearly labor contracts, guaranteeing white employers cheap and steady labor, and reestablished plantation discipline and control.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">1868</div>
+    <div>
+      <h3>&ldquo;Dillon&rsquo;s Rule&rdquo; Introduced</h3>
+      <p>Introduced in a decision by Iowa Supreme Court Justice John F. Dillon, Dillon&rsquo;s Rule holds that localities have only the governing powers a state has explicitly given them by law. Otherwise they have no decisionmaking power whatsoever.</p>
+      <a class="anchorlink" href="place-virginia.html">&rarr; this is Virginia&rsquo;s story</a>
+    </div>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · April 13, 1873</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Colfax Massacre</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">During disputes over the gubernatorial and local parish elections, Black men occupied and set out to defend the courthouse in Colfax, Louisiana, in an attempt to prevent a white supremacist takeover of their local governance. In response, a large white mob &mdash; including members of the Ku Klux Klan and former Confederate soldiers &mdash; surrounded them, fired a cannon, and set fire to the courthouse. Around 150 Black men were murdered defending local power. The Colfax massacre was the deadliest single incident of racial violence of the Reconstruction era.</p>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1876</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">United States v. Cruikshank</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">After the Colfax massacre, the United States Supreme Court ruled that the federal government could not prosecute private individuals for violating Black citizens&rsquo; rights. According to the Court, the power to protect Black citizens against white supremacist violence and stolen power was held solely by state governments &mdash; which in many places were led near exclusively by white supremacists. Federal protection withdrew, and the states that had just been recaptured were handed sole authority over the people they were disenfranchising.</p>
+  </div>
+</section>
+
+<!-- ERA 3 -->
+<section class="era" id="era3">
+  <div class="era-head"><span class="era-num">3</span><span class="era-name">Post-Reconstruction / “Redemption”</span><span class="era-dates">1875–1900</span></div>
+  <p class="eraintro">The backlash was organized, armed, and legislative. Having lost at the local level, white power moved the decision upward &mdash; to state legislatures and state constitutions, out of reach of the communities it was aimed at.</p>
+  <blockquote class="sidequote">&ldquo;It is one of the oldest tricks in their book.&rdquo;<cite>&mdash; <em>From The Roots</em>, Advancement Project</cite></blockquote>
+  <div class="entry">
+    <div class="date">1875</div>
+    <div>
+      <h3>The First Home Rule State: Missouri</h3>
+      <p>Home rule is the opposite of Dillon&rsquo;s Rule. Home rule allows local governments within a state to largely govern themselves &mdash; but the state keeps the power to deny a locality&rsquo;s authority on certain issues. Missouri&rsquo;s new constitution was the first ever to break from Dillon&rsquo;s Rule, allowing cities with more than 85,000 residents to frame and adopt their own local charters and laws. St. Louis became the first city to take it up.</p>
+      </div>
+  </div>
+  <div class="entry">
+    <div class="date">1875</div>
+    <div>
+      <h3>“Redeemers” Dismantle Local Governance</h3>
+      <p>White paramilitary coalitions across the country calling themselves “Redeemers” took back control of state legislatures and used them to abolish township governments, violently destroying the multiracial democracy Black communities were beginning to build. They rewrote state constitutions to eliminate Black-led governance. Their strategy was disenfranchisement, retrenchment, and the weakening of Black power in order to rebuild their own.</p>
+    </div>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1890</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Mississippi Constitution</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">Mississippi wrote a constitution designed to disenfranchise Black voters and strip them of any say in their daily lives without explicitly saying so — poll taxes, literacy tests, an understanding clause. Within twenty years, state after state copied it nearly word for word. <strong>One state writes a template; the rest adopt it.</p>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1898 · highest priority</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Wilmington Coup</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">A duly elected, multiracial local government in Wilmington, North Carolina was overthrown by armed force. Officials were driven out of the city at gunpoint, Black residents were massacred, and the state's largest Black-majority city was permanently remade. It is the only successful coup d'état against a local government in American history.</p>
+  </div>
+</section>
+
+<!-- ERA 4 -->
+<section class="era" id="era4">
+  <div class="era-head"><span class="era-num">4</span><span class="era-name">Jim Crow Era</span><span class="era-dates">1900s–1940s</span></div>
+  <p class="eraintro">Jim Crow is usually told as a story of signs and segregated rooms. It was also a story about who was allowed to govern. The court decisions and state constitutions of this era made state override of local Black political power routine rather than exceptional.</p>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1896</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">Plessy v. Ferguson</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">The United States Supreme Court ruled that &ldquo;separate but equal&rdquo; was constitutional &mdash; and in so doing not only approved separate bathrooms, separate schools and other overt practices of racial segregation and humiliation, but underscored the broad police power of state governments to control and regulate local health, safety and public order. Plessy established the legal architecture that made state override of local Black political power routine rather than exceptional.</p>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1901</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Alabama Constitution</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">Written explicitly — by its framers' own stated admission — to establish white supremacy, and drafted to strip local governing authority so thoroughly that Alabama counties still cannot act without state legislative permission today.</p>
+    <a class="anchorlink" href="place-virginia.html">&rarr; a throughline to the legal regime in Virginia</a>
+  </div>
+</section>
+
+<!-- ERA 5 -->
+<section class="era" id="era5">
+  <div class="era-head"><span class="era-num">5</span><span class="era-name">Civil Rights Movement</span><span class="era-dates">1950s–1970s</span></div>
+  <p class="eraintro">As Black communities won at the ballot box and in the courts, states answered by taking the decisions away from the places where those wins were happening &mdash; schools, workplaces, city councils.</p>
+  <blockquote class="sidequote">&ldquo;The methods have changed but the purpose remains the same.&rdquo;<cite>&mdash; <em>From The Roots</em>, Advancement Project</cite></blockquote>
+  <div class="entry">
+    <div class="date">1944</div>
+    <div>
+      <h3>Right to Work Laws</h3>
+      <p>In Florida and Arkansas, a series of laws designed to strip workers of the power to organize made it harder for workers to form unions and negotiate for wages, benefits, and conditions. Rooted in racial capitalism, designed to keep Black and white workers from organizing together for power, and promoted by corporate-funded groups and segregationist politicians. These laws were an early example of how state laws were used to steal local Black and brown power.</p>
+      </div>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1956–1959 · high priority</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">Massive Resistance</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">After <em>Brown v. Board of Education</em> overruled <em>Plessy v. Ferguson</em> and ruled that &ldquo;separate,&rdquo; segregated schools were in fact not &ldquo;equal,&rdquo; Virginia&rsquo;s legislature stripped local school boards of the authority to desegregate and seized control of pupil assignment statewide. When some localities moved to integrate anyway, the state closed their public schools entirely rather than let a local decision stand.</p>
+    <a class="anchorlink" href="place-virginia.html">&rarr; The continuing fight for home rule in Virginia</a>
+    <a class="anchorlink" href="place-houston.html">&rarr; The active state takeover of schools in Houston</a>
+  </div>
+  <div class="entry">
+    <div class="date">1953</div>
+    <div>
+      <h3>Landmark Reforms Surrounding Home Rule</h3>
+      <p>The American Municipal Association — later the National League of Cities — published the most recent proposed reform of home rule, prompting states to update their constitutions and broaden local initiative power. <em>Modern Constitutional Provisions for Municipal Home Rule</em> reversed the traditional Dillon's Rule assumption, holding that home rule should be a default rather than something states granted. But it also held that states should keep broad authority to structure or override local law.</p>
+      </div>
+  </div>
+  <div class="entry">
+    <div class="date">1975–1980</div>
+    <div>
+      <h3>Mobile v. Bolden Upholds Voting Maps that Dilute Black Votes</h3>
+      <p>In 1975, the Non-Partisan Voters&rsquo; League sued, alleging that Mobile, Alabama&rsquo;s at-large form of government diluted the local Black vote in violation of the 15th Amendment&rsquo;s extension of voting rights to freed slaves and the Voting Rights Act. An at-large government elects council members by the entire city population rather than by district. The United States Supreme Court, however, rejected the lawsuit and held &mdash; against all evidence to the contrary &mdash; that at-large elections are racially neutral.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ERA 6 -->
+<section class="era" id="era6">
+  <div class="era-head"><span class="era-num">6</span><span class="era-name">The Rise of Capitalism and Corporations</span><span class="era-dates">1980s–1990s</span></div>
+  <p class="eraintro">Corporations discovered what segregationists already knew: if you cannot win in a city, you can go over its head. Industry money turned the override from a political weapon into a business strategy.</p>
+  <div class="entry">
+    <div class="date">1980s</div>
+    <div>
+      <h3>Smoke Bans</h3>
+      <p>When local governments began adopting smoke-free public areas for public health, the tobacco industry responded by promoting and using the same laws that enabled stolen power to protect its own bottom line. Many of the anti-smoking regulations they targeted were in majority-Black cities.</p>
+    </div>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 1989 · high priority</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">New Jersey takes over Jersey City schools</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">The first state takeover of a local school district in American history. Within a decade the mechanism had spread to Cleveland, Baltimore, Chicago, Detroit, and dozens more — overwhelmingly districts serving Black and brown students. <strong></strong></p>
+    <a class="anchorlink" href="place-houston.html">&rarr; Explore how this is happening in Houston today</a>
+  </div>
+</section>
+
+<!-- ERA 7 -->
+<section class="era" id="era7">
+  <div class="era-head"><span class="era-num">7</span><span class="era-name">ALEC and Nationalized Preemption</span><span class="era-dates">2000s–2010s</span></div>
+  <p class="eraintro"><strong>The American Legislative Exchange Council &mdash; ALEC &mdash;</strong> is a powerful lobbying group responsible for a significant number of preemption bills across the country. It drafts what it calls &ldquo;model policies&rdquo; and sends them to multiple states. You can usually tell ALEC is behind a bill when numerous states introduce legislation on the same topic in almost identical language. ALEC rose to power in the 1980s and 1990s, and became increasingly involved in blocking growth and reform in labor, housing, gun control and climate movements in the 21st century.</p>
+  <blockquote class="sidequote">&ldquo;None of this is random.&rdquo;<cite>&mdash; <em>From The Roots</em>, Advancement Project</cite></blockquote>
+  <div class="entry">
+    <div class="date">2000s</div>
+    <div>
+      <h3>The Fight for $15 Movement</h3>
+      <p>Local movements to raise the minimum wage began appearing across the country. ALEC responded by offering strategic planning to state lawmakers who opposed higher wages on how to use state law to override local decisionmaking. Since the movement was named, 25 states have passed legislation overriding higher local minimum wages.</p>
+      </div>
+  </div>
+  <div class="entry">
+    <div class="date">2011</div>
+    <div>
+      <h3>Florida Passes their Landmark Punitive Firearms Law</h3>
+      <p>Florida passed a bill threatening lawsuits against city officials who enact gun safety rules. Now located in section 790.33 of the Florida Statutes, the law severely restricts local authority over firearms. Any existing or future local action is declared null and void, and local officials who attempt to legislate can be held personally liable and removed from office.</p>
+      </div>
+  </div>
+  <div class="prop">
+    <div class="lbl">Proposed addition · 2011–2014 · high priority</div>
+    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">Michigan's emergency managers · Flint</h3>
+    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">Michigan gave the state power to install appointed emergency managers who could override or replace elected local government outright. At the peak of this effort, a majority of Michigan&rsquo;s Black residents lived under a government they had not elected &mdash; while most white residents remained in control of their lives and decisions. In Flint, an appointed manager&rsquo;s decision poisoned a city&rsquo;s water supply. Voters repealed the law by referendum in 2012; the legislature passed a near-identical replacement weeks later.</p>
+    <a class="anchorlink" href="place-jackson.html">&rarr; Explore the current state takeover of majority-Black Jackson, Mississippi&rsquo;s water, courts and police</a>
+  </div>
+  <div class="entry">
+    <div class="date">2016</div>
+    <div>
+      <h3>Arizona Passes SB 1487</h3>
+      <p>Arizona passed a law allowing the state to withhold funding from “noncompliant” cities: localities that pass legislation or take official action the state considers in violation of state law or the constitution (read: disapproves of).</p>
+      </div>
+  </div>
+</section>
+
+<!-- ERA 8 -->
+<section class="era" id="era8">
+  <div class="era-head"><span class="era-num">8</span><span class="era-name">Abusive Preemption on the Rise</span><span class="era-dates">2020–2024</span></div>
+  <p class="eraintro">The uprisings of 2020 were met with legislation. This is the period when the volume becomes impossible to explain as coincidence: hundreds of bills a session, filed across dozens of states, on the same handful of subjects.</p>
+  <div class="entry">
+    <div class="date">Summer–Fall 2020</div>
+    <div>
+      <h3>Legislative Backlash Follows Uprisings After George Floyd's Death</h3>
+      <p>Millions saw the video of the murder of George Floyd, a Black man in Minneapolis, at the hands of police. They took to the streets against racism and police violence. While the overwhelming majority of protests were peaceful, states responded by passing laws blocking police reform at the local level.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">Late 2020</div>
+    <div>
+      <h3>COVID-19 Denialism Risks Public Health Protections Nationwide</h3>
+      <p>The pandemic produced temporary protections for millions, including a federal eviction moratorium that kept families housed. As patience wore thin, the moratorium and other public health rules — including local mask mandates — were challenged in courts and legislatures. Mask bans have often been used as anti-protest legislation, and some states passed bans with no public health exemption at all.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">2022–2024</div>
+    <div>
+      <h3>Legislative Sessions Feature a Severe Uptick in Preemption Bills</h3>
+      <p>Preemption legislation exploded across the country: 42 states introduced more than 650 bills. They banned water breaks for outdoor workers in Florida, stripped local control over housing and labor in Texas (HB 2127), and banned teaching students about race and gender in history. These bills increasingly carried criminal penalties, fines, and funding threats for anyone who legislated on issues their state had put off-limits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ERA 9 -->
+<section class="era" id="era9">
+  <div class="era-head"><span class="era-num">9</span><span class="era-name">The Current Landscape</span><span class="era-dates">2020s–Now</span></div>
+  <p class="eraintro">This is now. The takeovers on this list are running today, in real cities, against people who are still organizing against them.</p>
+  <blockquote class="sidequote">&ldquo;In a democratic environment, that would be us. However, in this takeover environment, our voices have been displaced.&rdquo;<cite>&mdash; Toshiba Dixon, Houston parent</cite></blockquote>
+  <div class="entry">
+    <div class="date">2020s–Now</div>
+    <div>
+      <h3>Rises in Educational Preemption</h3>
+      <p>At least 15 states have passed laws banning or restricting what public schools may teach about race, gender, or systemic oppression. These efforts whitewash the nation's history and silence local school boards run by, or serving, communities of color.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">2023</div>
+    <div>
+      <h3>Texas takes Houston · Mississippi takes Jackson's courts</h3>
+      <p>The Texas Education Agency removed Houston&rsquo;s elected school board and installed a Board of Managers it appointed, to steal power from local schools educating 180,000+ students, most of them Black and Latino. In the same period, Mississippi&rsquo;s HB 1020 installed state-appointed judges and prosecutors in Hinds County (Jackson) and expanded a state-controlled police force.</p>
+      <a class="anchorlink" href="place-houston.html">&rarr; Educational theft in Houston</a>
+    <a class="anchorlink" href="place-jackson.html">&rarr; State police takeover in Jackson, Mississippi</a>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">January 20, 2025</div>
+    <div>
+      <h3>Endless Legislative Attacks on Communities Through Preemption</h3>
+      <p>As of May 2025, the Local Solutions Support Center had tracked more than 685 introduced preemption bills, with 58 passed and 24 awaiting governors' signatures. The largest single category concerns immigration enforcement: many states have banned their cities from declaring themselves sanctuary jurisdictions or from refusing 287(g) agreements — the arrangements that pull local police and sheriffs into federal immigration enforcement. Other categories include bans on DEI programs in higher education, public health, “Death Star” bills that eliminate local authority across a wide range of issues at once, and elections.</p>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">March 26, 2025</div>
+    <div>
+      <h3>Missouri State Legislature Passes HB 495</h3>
+      <p>HB 495 seized control of the St. Louis Metropolitan Police Department and handed it to a state-appointed board, meaning the state now runs a city's police department. The state also controls police funding and limits the oversight the community fought for after the killing of 18-year-old Michael Brown in 2014. St. Louis is a predominantly Black city whose majority-white state legislature now controls its police department.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pullrow">
+  <p class="pull">Preemption is being used today just as it was post-Reconstruction — for silencing Black and brown communities and stopping us from fighting for justice, power, and local autonomy.</p>
+  <p style="color:var(--muted);font-size:13.5px;margin-top:16px">— <em>From The Roots</em>, Advancement Project</p>
+</section>
+
+</main>
+
+
+<section class="mv" id="whythese" style="color:#EDE3D2"><h2>One more thing you should be able to see from here.</h2>
+  <p>The pattern is technically partisan, yes — Republican legislatures overriding Democratic cities. That framing isn't wrong, and it isn't enough. It flattens what is actually happening.</p>
+  <p>The cities on the receiving end are disproportionately Black, brown, and immigrant. The legal mechanism has been aimed at the same communities for a hundred and fifty years — through Reconstruction, Redemption, Jim Crow, right-to-work, Massive Resistance, emergency managers, and into this legislative session.</p>
+  <div class="banner"><p>It is a racial-control story wearing a partisan suit.</p></div></section>
+<footer class="pcpfoot">
+  <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
+  <div class="fgrid">
+    <div><h4>The site</h4>
+      <a href="how-it-happens.html">How It Happens</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a><a href="find-your-campaign.html">Find your campaign</a></div>
+    <div><h4>Places</h4><a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a></div>
+    <div><h4>Read</h4>
+      <a href="#">From The Roots &mdash; the zine</a><a href="history.html">The preemption timeline</a><a href="#">For journalists</a><a href="#">Sample testimony</a></div>
+    <div><h4>Join</h4>
+      <a href="find-your-campaign.html">Campaigns near you</a><a href="#">Campaign updates</a><a href="#">Partner with us</a><a href="#">Tell us your story</a></div>
+    <div><h4>Advancement Project</h4>
+      <a href="about.html">About this project</a><a href="#">Contact</a><a href="#">Espa&ntilde;ol &mdash; the full site</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="fbase"><div class="cwrap">
+    <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
+    <span>Prototype &middot; August 2026</span>
+  </div></div>
+</footer>
+<script>
+(function(){
+  var eras=[].slice.call(document.querySelectorAll('section.era'));
+  var chips=[].slice.call(document.querySelectorAll('#botnav .erabar a'));
+  function current(){
+    var idx=0;
+    eras.forEach(function(el,i){ if(el.getBoundingClientRect().top<=200) idx=i; });
+    return idx;
+  }
+  function jump(i){
+    i=Math.max(0,Math.min(eras.length-1,i));
+    eras[i].scrollIntoView({behavior:'smooth'});
+  }
+  document.getElementById('enext').onclick=function(){jump(current()+1)};
+  document.getElementById('eprev').onclick=function(){jump(current()-1)};
+  document.getElementById('etop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+  function tick(){
+    var c=current();
+    chips.forEach(function(a,i){a.classList.toggle('on',i===c)});
+  }
+  window.addEventListener('scroll',tick,{passive:true}); tick();
+})();
+</script>
+</body>
+</html>

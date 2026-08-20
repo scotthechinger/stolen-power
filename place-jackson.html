@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jackson — People-Centered Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17140F;--cream:#FDF6E8;--cream2:#F3E8D4;--brick:#D64525;--amber:#F2A33C;--yellow:#FFC845;--hue:#2E6FD9;--tint:#DCE7FB}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.ptop{background:var(--hue);color:#fff;border-bottom:4px solid var(--ink)}
+.ptop .wrap{padding:56px 28px}
+.ptop .eyebrow{opacity:.85;margin-bottom:14px}
+.ptop h1{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(46px,9vw,118px);line-height:.9;letter-spacing:-.035em}
+.ptop .psub{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:clamp(21px,2.6vw,34px);margin-top:12px}
+.pstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-bottom:4px solid var(--ink);background:var(--tint)}
+.pstat{padding:24px 22px;border-right:2px solid rgba(23,20,15,.16)}
+.pstat:last-child{border-right:none}
+.pstat b{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(26px,3.4vw,42px);line-height:1;letter-spacing:-.03em;display:block;margin-bottom:7px}
+.pstat span{font-size:13.5px;line-height:1.35;display:block;opacity:.8}
+.pflag{background:#FFF3D6;border-left:6px solid var(--amber);color:#6a5320;font-size:15px;padding:16px 20px;margin:0}
+main .wrap{padding:12px 28px 20px}
+.psec{max-width:70ch;margin:0 auto;padding:46px 28px;border-bottom:2px solid rgba(23,20,15,.14)}
+.psec h2{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(25px,3.4vw,42px);line-height:1.02;letter-spacing:-.02em;margin-bottom:20px}
+.psec p{margin-bottom:16px}
+.psec .big{font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,2.2vw,27px);line-height:1.34;border-left:7px solid var(--hue);padding-left:20px;margin-top:24px}
+.pq{border-left:7px solid var(--hue);padding:6px 0 6px 20px;margin:22px 0;font-family:'Fraunces',Georgia,serif;font-size:clamp(19px,2vw,24px);line-height:1.36}
+.pq cite{display:block;margin-top:10px;font-family:'DM Sans';font-style:normal;font-size:13.5px;opacity:.7;letter-spacing:.02em}
+.pnext{background:var(--ink);color:var(--cream);border-top:4px solid var(--ink)}
+.pnext .wrap{padding:50px 28px}
+.pnext h3{font-family:'Archivo Black';font-size:clamp(21px,2.8vw,32px);margin-bottom:8px}
+.pnext p{opacity:.8;margin-bottom:22px;max-width:60ch}
+.pbtns{display:flex;gap:10px;flex-wrap:wrap}
+.pbtns a{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:14px 19px;text-decoration:none;border:3px solid var(--cream);border-radius:2px}
+.pbtns a.solid{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.pothers{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;padding-top:22px;border-top:1px solid rgba(253,246,232,.24)}
+.pothers a{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;text-decoration:none;border:2px solid rgba(253,246,232,.4);padding:10px 15px;border-radius:2px;opacity:.85}
+.pothers a:hover{opacity:1;border-color:var(--amber);color:var(--amber)}
+@media(max-width:820px){.pstats{grid-template-columns:1fr 1fr}.pstat{border-bottom:2px solid rgba(23,20,15,.16)}}
+
+
+/* ===== place switcher ===== */
+.pswitch{position:sticky;top:72px;z-index:78;background:var(--ink);color:var(--cream);border-bottom:3px solid var(--ink)}
+.pswitch .cwrap{display:flex;align-items:center;gap:11px;height:62px;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:1440px}
+.pswitch .plab{font-size:10px;letter-spacing:.17em;text-transform:uppercase;font-weight:700;color:var(--amber);white-space:nowrap;flex:none}
+.pswitch .plist{display:flex;gap:7px;flex:1}
+.pswitch a{display:flex;gap:8px;align-items:baseline;font-size:13px;font-weight:700;letter-spacing:.02em;text-decoration:none;color:var(--cream);border:2px solid rgba(253,246,232,.3);padding:8px 14px;border-radius:2px;white-space:nowrap;opacity:.82}
+.pswitch a em{font-style:normal;font-size:11px;opacity:.6;font-weight:400}
+.pswitch a:hover{opacity:1;border-color:var(--amber)}
+.pswitch a.on{background:var(--hue);border-color:var(--hue);color:#fff;opacity:1}
+.pswitch a.on em{opacity:.85}
+.pswitch .pall{margin-left:auto;flex:none;border-color:rgba(253,246,232,.3)}
+@media(max-width:860px){.pswitch{top:auto;position:static}.pswitch .plab{display:none}}
+
+/* ===== anchor framing ===== */
+.anchorbar{background:var(--cream2);border-bottom:4px solid var(--ink)}
+.anchorbar .wrap{padding:20px 28px;display:flex;gap:18px;align-items:flex-start;max-width:1440px}
+.anchorbar .abmark{font-family:'Archivo Black',Impact,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:7px 11px;border-radius:2px;white-space:nowrap;flex:none;margin-top:2px}
+.anchorbar p{font-size:15.5px;line-height:1.5;max-width:88ch;margin:0}
+.anchorbar a{font-weight:700;text-underline-offset:3px}
+@media(max-width:700px){.anchorbar .wrap{flex-direction:column;gap:11px}}
+
+/* ===== SHARED CHROME (nav + footer) ===== */
+.pcpnav{position:sticky;top:0;z-index:90;background:#17140F;color:#FDF6E8;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif}
+.cwrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.pcpnav .cwrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:1440px}
+.pcplogo{font-family:'Archivo Black',Impact,sans-serif;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:#FDF6E8;white-space:nowrap}
+.pcplogo em{font-style:normal;color:#F2A33C}
+.pcplinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.pcplinks a{text-decoration:none;opacity:.82;color:#FDF6E8;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.pcplinks a:hover{opacity:1;color:#FFC845}
+.pcplinks a.on{opacity:1;color:#F2A33C;border-bottom-color:#F2A33C}
+.pcpcta{background:#D64525;color:#fff;padding:12px 18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap}
+.pcpcta:hover{background:#FFC845;color:#17140F}
+@media(max-width:1180px){.pcplogo em{display:none}}
+@media(max-width:1120px){.pcplinks{gap:13px;font-size:11px;letter-spacing:.07em}}
+@media(max-width:860px){.pcpnav .cwrap{height:auto;padding:9px 16px;flex-wrap:wrap;row-gap:8px}
+ .pcplinks{order:3;width:100%;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px}}
+
+/* ===== SUBNAV ===== */
+.subnav{position:sticky;z-index:80;background:#F3E8D4;color:#17140F;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif;top:72px}
+.subnav .cwrap{display:flex;align-items:center;gap:10px;height:60px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subnav .slab2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-right:6px;white-space:nowrap}
+.snl{display:flex;gap:6px;align-items:center;flex:1}
+.snl a,.snl button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snl a:hover,.snl button:hover{border-color:#17140F;background:#FDF6E8}
+.snl a.on,.snl button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+.snr{display:flex;gap:6px;margin-left:auto}
+@media(max-width:860px){.subnav{top:auto;position:sticky;top:0}.subnav .slab2{display:none}}
+
+/* ===== FOOTER ===== */
+.pcpfoot{background:#17140F;color:#FDF6E8;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55}
+.fclose{background:#D64525;color:#fff;border-bottom:4px solid #17140F}
+.fclose .cwrap{padding:64px 28px;text-align:center}
+.fclose p{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(28px,5vw,64px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:52px 28px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:'DM Sans';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F2A33C;margin:0 0 11px}
+.fgrid a{display:block;opacity:.8;text-decoration:none;color:#FDF6E8;margin-bottom:7px;font-size:14px}
+.fgrid a:hover{opacity:1;color:#FFC845}
+.fbase{border-top:1px solid rgba(253,246,232,.2)}
+.fbase .cwrap{padding:20px 28px;font-size:12px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:1080px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr 1fr}}
+
+</style></head>
+<body>
+<nav class="pcpnav"><div class="cwrap">
+  <a class="pcplogo" href="pcp-home.html">ADVANCEMENT PROJECT <em>&middot; PEOPLE-CENTERED POWER</em></a>
+  <div class="pcplinks"><a href="how-it-happens.html">How It Happens</a><a href="place-houston.html" class="on">Places</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a></div>
+  <a class="pcpcta" href="find-your-campaign.html">Find your campaign</a>
+</div></nav>
+<div class="pswitch"><div class="cwrap">
+  <div class="plist"><a href="place-houston.html">Houston <em>Texas</em></a><a href="place-jackson.html" class="on">Jackson <em>Mississippi</em></a><a href="place-virginia.html">Virginia <em>statewide</em></a><a href="place-stlouis.html">St. Louis <em>Missouri</em></a></div>
+  <a class="pall" href="find-your-campaign.html">Everywhere else &rarr;</a>
+</div></div>
+<header class="ptop"><div class="wrap">
+  <div class="eyebrow">Mississippi</div>
+  <h1>Jackson</h1>
+  <div class="psub">Our water</div>
+</div></header>
+<div class="pstats"><div class="pstat"><b>80%</b><span>Black — the Blackest major city in America</span></div><div class="pstat"><b>2022</b><span>the year the water failed</span></div><div class="pstat"><b>HB 1020</b><span>state-appointed courts and police</span></div></div>
+<main><section class="psec"><h2>What we built</h2><p>Jackson built its own water system, and Jackson paid for it. For generations the people who lived here built the infrastructure, paid the taxes that maintained it, and elected the people who ran it.</p><p>Jackson also built something most American cities do not have: a <strong>People&rsquo;s Assembly</strong> — an actual structure where residents make decisions together and the city governs alongside them rather than at them. That is not a metaphor for democracy. It is a calendar, a room, and a vote.</p></section><section class="psec"><h2>What happened</h2><p>After the 2022 crisis left the city without safe drinking water, the state moved to regionalize the system — shifting control outward toward surrounding counties that are smaller, whiter, and not the people who built or use it.</p><p>In the same period the legislature passed <strong>HB 1020</strong>, expanding a state-appointed court system and a state-controlled police force inside the state&rsquo;s Blackest city, with judges appointed rather than elected by the people they judge.</p></section><section class="psec"><h2>What it feels like</h2><p>First you cannot drink it. Then you cannot decide about it.</p>
+   <p>The clearest description of what that does to a community came from Jackson itself &mdash; not as a legal argument, but as a plain statement of what was agreed and then undone.</p><blockquote class="pq">&ldquo;One state can change a law we agreed to as a community.&rdquo;<cite>&mdash; Rukia Lumumba</cite></blockquote><p>Notice the possessives. <em>We agreed. Our system.</em> That is not rhetoric. It is a description of who paid for the pipes.</p></section><section class="psec"><h2>Who decides now</h2><p>A city that governs by assembly, governed by appointment. Jackson has one of the most developed models of shared community governance in the country, and it is being run, in significant part, by people its residents did not choose.</p><p>Both things are true at once, and the second one is not an accident of history. It is the response to the first.</p></section></main>
+<section class="pnext"><div class="wrap">
+  <h3>Where to now</h3>
+  <p>You can explore this same story as an interactive experience, see the bills moving in this state right now, or find the people already fighting it.</p>
+  <div class="pbtns">
+    <a class="solid" href="find-your-campaign.html">Get involved here &rarr;</a>
+    <a href="how-it-happens.html">Experience it for yourself &rarr;</a>
+    <a href="tracker.html">See the bills &rarr;</a>
+    <a href="voices.html">Learn from people &rarr;</a>
+  </div>
+  </div></section>
+<footer class="pcpfoot">
+  <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
+  <div class="fgrid">
+    <div><h4>The site</h4>
+      <a href="how-it-happens.html">How It Happens</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a><a href="find-your-campaign.html">Find your campaign</a></div>
+    <div><h4>Places</h4><a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a></div>
+    <div><h4>Read</h4>
+      <a href="#">From The Roots &mdash; the zine</a><a href="history.html">The preemption timeline</a><a href="#">For journalists</a><a href="#">Sample testimony</a></div>
+    <div><h4>Join</h4>
+      <a href="find-your-campaign.html">Campaigns near you</a><a href="#">Campaign updates</a><a href="#">Partner with us</a><a href="#">Tell us your story</a></div>
+    <div><h4>Advancement Project</h4>
+      <a href="about.html">About this project</a><a href="#">Contact</a><a href="#">Espa&ntilde;ol &mdash; the full site</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="fbase"><div class="cwrap">
+    <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
+    <span>Prototype &middot; August 2026</span>
+  </div></div>
+</footer>
+</body></html>

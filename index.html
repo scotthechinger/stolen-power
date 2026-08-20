@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>People-Centered Power — Advancement Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17140F;--cream:#FDF6E8;--cream2:#F3E8D4;--brick:#D64525;--amber:#F2A33C;--yellow:#FFC845;--green:#4F9B54;--purple:#8B4FA8;--blue:#2E6FD9;--muted:#6B6259}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.slab{font-family:'Archivo Black',Impact,sans-serif;letter-spacing:-.015em}
+.serif{font-family:'Fraunces',Georgia,serif}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+
+
+
+.logo{font-family:'Archivo Black';font-size:15px;letter-spacing:-.01em}
+.logo span{color:var(--amber)}
+.nlinks{display:flex;gap:22px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.nlinks a{text-decoration:none;opacity:.85}.nlinks a:hover{opacity:1;color:var(--yellow)}
+.ncta{background:var(--brick);color:#fff;padding:9px 15px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px}
+
+/* hero */
+.hero{background:var(--amber);border-bottom:4px solid var(--ink);position:relative;overflow:hidden}
+.hero{display:flex;align-items:center;min-height:calc(100vh - 72px)}
+.hero .wrap{padding-top:52px;padding-bottom:52px;position:relative;z-index:2;width:100%}
+.hero h1{font-family:'Archivo Black';font-size:clamp(54px,10.5vw,142px);line-height:.88;letter-spacing:-.03em;margin-bottom:22px}
+.hero h1 .r{color:var(--brick);display:block}
+.hero .sub{font-family:'Fraunces';font-size:clamp(19px,2.1vw,27px);line-height:1.34;max-width:52ch;margin-bottom:20px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.b1,.b2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:16px 24px;text-decoration:none;border:3px solid var(--ink);border-radius:2px;display:inline-block}
+.b1{background:var(--ink);color:var(--cream)}.b1:hover{background:var(--brick);border-color:var(--brick);color:#fff}
+.b2{background:transparent;color:var(--ink)}
+.b3{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:16px 24px;text-decoration:none;border:3px solid var(--brick);border-radius:2px;display:inline-block;background:var(--brick);color:#fff}
+.b3:hover{background:var(--ink);border-color:var(--ink)}.b2:hover{background:var(--ink);color:var(--cream)}
+.ast{font:inherit;font-size:.7em;line-height:1;display:inline-block;vertical-align:super;background:none;border:none;padding:0 1px;margin:0;color:var(--brick);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.ast:hover,.ast:focus{color:var(--ink);outline-offset:3px}
+.pword{background:var(--cream);border:3px solid var(--ink);border-left:9px solid var(--brick);padding:20px 22px;max-width:60ch;margin:-10px 0 30px;border-radius:3px}
+.pword p{font-size:16px;line-height:1.5}
+.pword[hidden]{display:none}
+@media(max-width:900px){}
+
+/* intro */
+.intro{background:var(--cream);border-bottom:4px solid var(--ink)}
+.intro .wrap{padding:70px 28px}
+.intro h2{font-family:'Fraunces';font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.1;max-width:19ch;margin-bottom:26px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:38px;margin-bottom:30px}
+.two p{font-size:17px;margin-bottom:13px}
+.two h3{font-family:'Archivo Black';font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--brick);margin-bottom:10px}
+.wordbox{border:3px solid var(--ink);background:var(--cream2);padding:24px;border-radius:3px}
+.wordbox p{font-size:16px;margin:0;max-width:78ch}
+@media(max-width:820px){.two{grid-template-columns:1fr;gap:26px}}
+
+/* sticky contents rail */
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:860px){}
+
+/* what this is */
+.namebox{max-width:62ch}
+.namebox p{font-family:'Fraunces';font-size:clamp(19px,2vw,25px);line-height:1.4;margin-bottom:18px}
+.namebox p strong{font-family:'Archivo Black';font-weight:400;letter-spacing:-.01em}
+.callit{border-left:8px solid var(--brick);padding-left:20px;margin-top:26px!important}
+.callit b{font-family:'Archivo Black';font-weight:400;color:var(--brick);letter-spacing:-.01em}
+
+/* lede + callback */
+.lede{font-family:'Fraunces';font-size:clamp(21px,2.4vw,30px);line-height:1.28;font-weight:600;margin-bottom:26px;max-width:24ch;border-left:6px solid var(--brick);padding-left:18px}
+
+/* contents */
+.toc{background:var(--cream2);color:var(--ink);border-bottom:4px solid var(--ink)}
+.toc .wrap{padding:60px 28px}
+.toc .eyebrow{color:var(--brick);margin-bottom:14px}
+.toc h2{font-family:'Fraunces';font-weight:700;font-size:clamp(25px,3.2vw,38px);line-height:1.14;max-width:26ch;margin-bottom:8px}
+.toc .tsub{font-size:16px;opacity:.8;max-width:60ch;margin-bottom:30px}
+.tlist{display:grid;grid-template-columns:1fr;gap:0;border-top:2px solid rgba(23,20,15,.28)}
+.titem{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:baseline;padding:16px 8px;border-bottom:2px solid rgba(23,20,15,.28);text-decoration:none;transition:background .15s}
+.titem:hover{background:var(--yellow)}
+.titem .tn{font-family:'Archivo Black';font-size:19px;color:var(--brick);letter-spacing:-.02em}
+.titem .tt{font-family:'Archivo Black';font-size:clamp(17px,2vw,23px);letter-spacing:-.01em}
+.titem .td{display:block;font-family:'DM Sans';font-weight:400;font-size:14px;opacity:.78;letter-spacing:0;margin-top:3px;max-width:52ch}
+.titem .tgo{font-size:19px;opacity:.45}
+@media(max-width:640px){.titem{grid-template-columns:44px 1fr;gap:12px}.titem .tgo{display:none}}
+
+/* doorways */
+.door{border-bottom:4px solid var(--ink);position:relative;scroll-margin-top:72px}
+.door .wrap{padding:80px 28px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.door .eyebrow{margin-bottom:16px}
+.dnum{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;padding-bottom:10px;border-bottom:3px solid currentColor}
+.dnum b{font-family:'Archivo Black';font-size:clamp(38px,5.5vw,64px);line-height:.8;letter-spacing:-.04em}
+.dnum i{font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.7}
+.nextcue{margin-top:26px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.6}
+.door h2{font-family:'Archivo Black';font-size:clamp(32px,4.8vw,62px);line-height:.98;margin-bottom:20px}
+.door p{font-size:clamp(17px,1.4vw,20px);max-width:52ch;margin-bottom:14px}
+.door .go{margin-top:22px;display:inline-block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:16px 24px;border:3px solid var(--ink);text-decoration:none;border-radius:2px}
+.d1{background:var(--green);color:#08210b}.d1 .eyebrow{color:#0d3311}.d1 .go{background:var(--cream);color:var(--ink)}.d1 .go:hover{background:var(--ink);color:var(--cream)}
+.d2{background:var(--ink);color:var(--cream)}.d2 .eyebrow{color:var(--amber)}.d2 .go{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}.d2 .go:hover{background:var(--cream)}
+.d3{background:var(--blue);color:#fff}.d3 .eyebrow{color:#CFE0FF}.d3 .go{background:#fff;color:var(--ink);border-color:#fff}.d3 .go:hover{background:var(--yellow);border-color:var(--yellow)}
+.d4{background:var(--cream2)}.d4 .eyebrow{color:var(--brick)}.d4 .go{background:var(--ink);color:var(--cream)}.d4 .go:hover{background:var(--brick);border-color:var(--brick)}
+.d5{background:var(--purple);color:#fff}.d5 .eyebrow{color:#EBD6F5}.d5 .go{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}.d5 .go:hover{background:#fff;border-color:#fff}
+@media(max-width:900px){.door .wrap{grid-template-columns:1fr;gap:28px;padding:56px 28px}}
+
+/* pieces */
+.stat{font-family:'Archivo Black';font-size:clamp(50px,8vw,104px);line-height:.9;letter-spacing:-.03em}
+.statlab{font-size:14px;letter-spacing:.05em;max-width:26ch;margin-top:10px;opacity:.9}
+.miniq{border-left:5px solid currentColor;padding-left:18px;font-family:'Fraunces';font-style:italic;font-size:clamp(18px,1.8vw,23px);line-height:1.32}
+.miniq cite{display:block;margin-top:9px;font-family:'DM Sans';font-style:normal;font-size:13px;opacity:.75;letter-spacing:.02em}
+.facecard{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.face{border:3px solid var(--ink);background:var(--cream);padding:14px;border-radius:3px}
+.face p{font-family:'Fraunces';font-style:italic;font-size:14px;line-height:1.3;margin:0 0 8px}
+.face b{font-size:11px;letter-spacing:.06em;text-transform:uppercase;display:block;color:var(--brick)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.flag{opacity:.55;font-size:.85em}
+.chip{border:2px solid currentColor;padding:6px 11px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border-radius:2px}
+.closing{background:var(--brick);color:#fff;border-bottom:4px solid var(--ink)}
+.closing .wrap{padding:74px 28px;text-align:center}
+.closing p{font-family:'Archivo Black';font-size:clamp(30px,5.4vw,68px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+footer{background:var(--ink);color:var(--cream)}
+footer .wrap{padding:52px 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;font-size:14px}
+footer h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:11px}
+footer a{display:block;opacity:.8;text-decoration:none;margin-bottom:7px}footer a:hover{opacity:1;color:var(--yellow)}
+.note{background:#FFF3D6;border-top:4px solid var(--ink);color:#6a5320;font-size:13px}
+.note .wrap{padding:20px 28px}
+@media(max-width:820px){footer .wrap{grid-template-columns:1fr 1fr}.facecard{grid-template-columns:1fr}}
+
+/* ===== SHARED CHROME (nav + footer) ===== */
+.pcpnav{position:sticky;top:0;z-index:90;background:#17140F;color:#FDF6E8;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif}
+.cwrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.pcpnav .cwrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:1440px}
+.pcplogo{font-family:'Archivo Black',Impact,sans-serif;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:#FDF6E8;white-space:nowrap}
+.pcplogo em{font-style:normal;color:#F2A33C}
+.pcplinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.pcplinks a{text-decoration:none;opacity:.82;color:#FDF6E8;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.pcplinks a:hover{opacity:1;color:#FFC845}
+.pcplinks a.on{opacity:1;color:#F2A33C;border-bottom-color:#F2A33C}
+.pcpcta{background:#D64525;color:#fff;padding:12px 18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap}
+.pcpcta:hover{background:#FFC845;color:#17140F}
+@media(max-width:1180px){.pcplogo em{display:none}}
+@media(max-width:1120px){.pcplinks{gap:13px;font-size:11px;letter-spacing:.07em}}
+@media(max-width:860px){.pcpnav .cwrap{height:auto;padding:9px 16px;flex-wrap:wrap;row-gap:8px}
+ .pcplinks{order:3;width:100%;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px}}
+
+/* ===== SUBNAV ===== */
+.subnav{position:sticky;z-index:80;background:#F3E8D4;color:#17140F;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif;top:72px}
+.subnav .cwrap{display:flex;align-items:center;gap:10px;height:60px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subnav .slab2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-right:6px;white-space:nowrap}
+.snl{display:flex;gap:6px;align-items:center;flex:1}
+.snl a,.snl button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snl a:hover,.snl button:hover{border-color:#17140F;background:#FDF6E8}
+.snl a.on,.snl button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+.snr{display:flex;gap:6px;margin-left:auto}
+.snr button,.snr a{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snr button:hover,.snr a:hover{border-color:#17140F;background:#FDF6E8}
+.snr button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+main section,main .panel{scroll-margin-top:145px}
+@media(max-width:860px){.subnav{top:auto;position:sticky;top:0}.subnav .slab2{display:none}}
+
+/* ===== FOOTER ===== */
+.pcpfoot{background:#17140F;color:#FDF6E8;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55}
+.fclose{background:#D64525;color:#fff;border-bottom:4px solid #17140F}
+.fclose .cwrap{padding:64px 28px;text-align:center}
+.fclose p{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(28px,5vw,64px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:52px 28px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:'DM Sans';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F2A33C;margin:0 0 11px}
+.fgrid a{display:block;opacity:.8;text-decoration:none;color:#FDF6E8;margin-bottom:7px;font-size:14px}
+.fgrid a:hover{opacity:1;color:#FFC845}
+.fbase{border-top:1px solid rgba(253,246,232,.2)}
+.fbase .cwrap{padding:20px 28px;font-size:12px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:1080px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr 1fr}}
+
+/* ===== BOTTOM SUBNAV (shared) ===== */
+.botnav{position:fixed;left:0;right:0;bottom:0;top:auto;height:auto;z-index:95;transform:translateY(115%);transition:transform .26s cubic-bezier(.2,.7,.3,1);pointer-events:none;background:#17140F;border-top:3px solid #17140F;
+  box-shadow:0 -6px 26px rgba(23,20,15,.22);font-family:'DM Sans',system-ui,sans-serif}
+.botnav.show{transform:none;pointer-events:auto}
+.botnav .bwrap{display:flex;align-items:stretch;width:100%}
+.bnlab{flex:none;display:flex;align-items:center;padding:0 18px;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:#F2A33C;border-right:1px solid rgba(253,246,232,.16);white-space:nowrap}
+.bnitems{display:flex;flex:1;min-width:0}
+.bnitems a,.bnitems button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font:inherit;background:transparent;border:none;border-right:1px solid rgba(253,246,232,.16);
+  color:#FDF6E8;padding:12px 6px;cursor:pointer;text-decoration:none;transition:background .14s,color .14s}
+.bnitems a:last-child,.bnitems button:last-child{border-right:none}
+.bnitems .bnum{font-family:'Archivo Black',Impact,sans-serif;font-size:10px;letter-spacing:.04em;color:#F2A33C;line-height:1}
+.bnitems .blab{font-size:11.5px;font-weight:700;letter-spacing:.03em;line-height:1.15;text-align:center;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.bnitems a:hover,.bnitems button:hover{background:rgba(242,163,60,.16)}
+.bnitems a.on,.bnitems button.on{background:#F2A33C;color:#17140F}
+.bnitems a.on .bnum,.bnitems button.on .bnum{color:#17140F}
+.bntools{flex:none;display:flex;border-left:1px solid rgba(253,246,232,.16)}
+.bntools button,.bntools a{display:flex;align-items:center;font:inherit;font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;background:transparent;border:none;border-right:1px solid rgba(253,246,232,.16);
+  color:#FDF6E8;padding:0 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bntools button:last-child,.bntools a:last-child{border-right:none}
+.bntools button:hover,.bntools a:hover{background:rgba(242,163,60,.16);color:#F2A33C}
+.bntools button.on{background:#FFC845;color:#17140F}
+body{padding-bottom:66px}
+@media(max-width:900px){
+  .bnlab{display:none}
+  .bnitems .blab{font-size:10px}
+  .bnitems a,.bnitems button{padding:10px 3px}
+  .bntools button,.bntools a{padding:0 10px;font-size:9.5px}
+  body{padding-bottom:60px}
+}
+@media(max-width:600px){.bnitems .blab{display:none}.bnitems .bnum{font-size:12px}}
+</style>
+</head>
+<body>
+
+<nav class="pcpnav"><div class="cwrap">
+  <a class="pcplogo" href="pcp-home.html">ADVANCEMENT PROJECT <em>&middot; PEOPLE-CENTERED POWER</em></a>
+  <div class="pcplinks"><a href="how-it-happens.html">How It Happens</a><a href="place-houston.html">Places</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a></div>
+  <a class="pcpcta" href="find-your-campaign.html">Find your campaign</a>
+</div></nav>
+<nav class="botnav" id="botnav" aria-label="Section navigation"><div class="bwrap">
+  <span class="bnlab">On this page</span>
+  <div class="bnitems">
+    <a href="#story"><span class="bnum">01</span><span class="blab">How It Happens</span></a>
+    <a href="#history"><span class="bnum">02</span><span class="blab">Timeline</span></a>
+    <a href="#tracker"><span class="bnum">03</span><span class="blab">Tracker</span></a>
+    <a href="#voices"><span class="bnum">04</span><span class="blab">Voices</span></a>
+    <a href="#act"><span class="bnum">05</span><span class="blab">Take Action</span></a>
+  </div>
+  <div class="bntools"><button id="btop">&uarr; Top</button></div>
+</div></nav>
+
+
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow" style="margin-bottom:18px">Advancement Project</div>
+    <h1>Stolen power.<span class="r">Take it back.</span></h1>
+    <p class="sub">Across the country, state governments are taking away the right of Black and brown communities to govern themselves. They take over our schools. They seize our police departments and our water. They overrule what we voted for.</p>
+    <p class="sub" style="font-weight:600">This<a class="ast" href="#whatitis" title="What this is called">*</a> is a 150-year-old strategy being deployed more aggressively than ever before. But communities are fighting back.</p>
+    <div class="btns">
+      <a class="b1" href="how-it-happens.html">Watch video →</a>
+      <a class="b2" href="#toc">Learn more →</a>
+      <a class="b3" href="find-your-campaign.html">Take action →</a>
+    </div>
+  </div>
+</header>
+
+<!-- WHAT THIS IS -->
+<section class="intro" id="whatitis"><div class="wrap">
+  <h2>If they are stealing your power, you should know it and be able to name it.</h2>
+  <div class="namebox">
+    <p><strong>&ldquo;Preemption.&rdquo;</strong> It&rsquo;s what lawyers and legislators call the long-standing, racist practice of stealing local power.</p>
+    <p>It&rsquo;s a real word for a real legal tool. But legalese works like a wall. The more neutral or dull sounding the name, the easier it is to overlook. And the longer it survives.</p>
+    <p class="callit">So we call it what it is: <b>Stolen Power.</b></p>
+  </div>
+</div></section>
+
+<!-- CONTENTS -->
+<section class="toc" id="toc"><div class="wrap">
+  <div class="eyebrow">What's on this website · five ways in</div>
+  <h2>Everything here, in five pieces.</h2>
+  <p class="tsub">Start anywhere. Most people start at 01 — it's the fastest way to understand the rest.</p>
+  <div class="tlist">
+    <a class="titem" href="#story"><span class="tn">01</span><span class="tt">How It Happens<span class="td">An ordinary day in an ordinary place, and the moment somebody with no connection to you makes the most consequential decisions for you.</span></span><span class="tgo">→</span></a>
+    <a class="titem" href="#history"><span class="tn">02</span><span class="tt">Timeline<span class="td">150 years of stolen power. Ten eras, from Reconstruction to present.</span></span><span class="tgo">→</span></a>
+    <a class="titem" href="#tracker"><span class="tn">03</span><span class="tt">Tracker<span class="td">Every bill we can find that takes power from a city. Searchable, updated, exportable.</span></span><span class="tgo">→</span></a>
+    <a class="titem" href="#voices"><span class="tn">04</span><span class="tt">Voices<span class="td">Parents, students, teachers, professionals, elected officials. Describing how it feels in their own words.</span></span><span class="tgo">→</span></a>
+    <a class="titem" href="#act"><span class="tn">05</span><span class="tt">Take Action<span class="td">Campaigns running right now. Some need people power, some need money, some need one conversation.</span></span><span class="tgo">→</span></a>
+  </div>
+</div></section>
+
+<!-- DOOR 1 -->
+<section class="door d1" id="story"><div class="wrap">
+  <div>
+    <div class="dnum"><b>01</b><i>of five</i></div>
+    <div class="eyebrow">The story · interactive</div>
+    <h2>It's easier to understand when it's happening to you.</h2>
+    <p>So let's start here. Not with laws or rules. But with an ordinary day in an ordinary place, and the moment somebody without any connection to you makes the most consequential decisions for you.</p>
+    <p><strong>Pick a problem you can relate to.</strong> Your home. Your child's school. The water coming out of your tap. Then walk through what you'd do about it — and find out who is actually allowed to decide.</p>
+    <a class="go" href="how-it-happens.html">Walk in our shoes →</a>
+    <div class="nextcue">Next · 02 Timeline ↓</div>
+  </div>
+  <div>
+    <div class="chips">
+      <div class="chip">🏠 Your home</div><div class="chip">🏫 Your kid's school</div><div class="chip">🚰 Your water</div>
+    </div>
+    <div class="miniq" style="margin-top:24px">Every time we built something — a school, a community program, a union chapter — the government found a way to shut it down.<cite>— <em>From The Roots</em>, Advancement Project</cite></div>
+  </div>
+</div></section>
+
+<!-- DOOR 2 -->
+<section class="door d2" id="history"><div class="wrap">
+  <div>
+    <div class="dnum"><b>02</b><i>of five</i></div>
+    <div class="eyebrow">Timeline · 150 years of stolen power</div>
+    <h2>What&rsquo;s happening now is not new.</h2>
+    <p>After the Civil War, Black communities built schools, elected officials, wrote local law, and cared for each other. Within a decade, white paramilitary coalitions calling themselves “Redeemers” took back the state legislatures and used them to abolish those local governments entirely.</p>
+    <p>The tool they used is the tool being used now. Just more widely than ever before.</p>
+    <p>They did not have to beat those communities at the local level. They moved the decision somewhere those communities could not reach.</p>
+    <a class="go" href="history.html">Explore the whole history →</a>
+    <div class="nextcue">Next · 03 Tracker ↓</div>
+  </div>
+  <div>
+    <div class="miniq" style="color:var(--amber)">The tool they used is the tool being used now.</div>
+    <div style="margin-top:26px;font-size:14px;line-height:2;opacity:.85">
+      1865 · <span style="opacity:.6">communities build</span><br>
+      1875 · <span style="opacity:.6">Redeemers dismantle</span><br>
+      1898 · <span style="opacity:.6">Wilmington</span><br>
+      1944 · <span style="opacity:.6">right-to-work</span><br>
+      1956 · <span style="opacity:.6">Massive Resistance</span><br>
+      2011 · <span style="opacity:.6">emergency managers</span><br>
+      2023 · <span style="opacity:.6">Houston · Jackson</span><br>
+      2025 · <span style="opacity:.6">St. Louis</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- DOOR 3 -->
+<section class="door d3" id="tracker"><div class="wrap">
+  <div>
+    <div class="dnum"><b>03</b><i>of five</i></div>
+    <div class="eyebrow">Tracker · what's moving now</div>
+    <h2>Happening right now, in statehouses, on paper.</h2>
+    <p>In one legislative session, 42 states introduced more than 650 bills to strip power from cities and counties.</p>
+    <p><strong>Search by state, by issue, or by what's about to move.</strong> A bill enters the tracker when it is <em>introduced</em> — so this counts attempts, not just successes. A bill that dies in one state this session is a bill that gets introduced in four more next session, usually word for word.</p>
+    <a class="go" href="tracker.html">Open the tracker →</a>
+    <div class="nextcue">Next · 04 Voices ↓</div>
+  </div>
+  <div>
+    <div class="stat">32</div>
+    <div class="statlab">bills we are documenting closely this session, across 13 states and Congress — each one with the case behind it. Three have passed. <strong>Nine are about immigration</strong>, the largest single category.</div>
+    <div class="chips" style="margin-top:20px">
+      <div class="chip">Immigration</div><div class="chip">Voting</div><div class="chip">Police &amp; takeovers</div>
+      <div class="chip">Housing</div><div class="chip">Health</div><div class="chip">Protest</div>
+      <div class="chip">Environment</div><div class="chip">LGBTQ+</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- DOOR 4 -->
+<section class="door d4" id="voices"><div class="wrap">
+  <div>
+    <div class="dnum"><b>04</b><i>of five</i></div>
+    <div class="eyebrow">Voices · in their own words</div>
+    <h2>Nobody here is explaining a policy. They are describing their day to day.</h2>
+    <p>Parents. Students. Teachers. Organizers. Neighbors. Elected officials who watched their own authority disappear.</p>
+    <p>Most had never heard the word for what was happening. All could describe the impact precisely.</p>
+    <a class="go" href="#">Listen →</a>
+    <div class="nextcue">Next · 05 Take Action ↓</div>
+  </div>
+  <div class="facecard">
+    <div class="face"><p>“In a democratic environment, that would be us. However, in this takeover environment, our voices have been displaced.”</p><b>Toshiba Dixon · parent</b></div>
+    <div class="face"><p>“We elected four school board positions, but the people we elected have no voting power.”</p><b>MinhDan Tran · teacher</b></div>
+    <div class="face"><p>“I vote. I'm engaged, I advocate, I protest. I just have to wait the clock out.”</p><b>Fred Woods · parent</b></div>
+    <div class="face"><p>“They say it was too messy, but I'm just sad because you could just wash it off.”</p><b>Gabriel · age 8</b></div>
+  </div>
+</div></section>
+
+<!-- DOOR 5 -->
+<section class="door d5" id="act"><div class="wrap">
+  <div>
+    <div class="dnum"><b>05</b><i>of five</i></div>
+    <div class="eyebrow">Campaign hub · get involved</div>
+    <h2>Stolen power is not permanent or unchangeable.</h2>
+    <p>There are campaigns running right now in Houston, in Jackson, in Virginia, in St. Louis, and in statehouses most people have never heard of.</p>
+    <p>Some need people power. Some need money. Some need you to tell one other person. All need awareness. Find the one that fits.</p>
+    <a class="go" href="#">Get involved →</a>
+  </div>
+  <div>
+    <div class="miniq">There are so many ways to get into advocacy that don't require you to stand outside and protest. You don't have to hoop and holler. There are so many ways to get involved in this work, and we need you.<cite>— Kourtney Revels, Houston parent and organizer</cite></div>
+  </div>
+</div></section>
+
+<footer class="pcpfoot">
+  <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
+  <div class="fgrid">
+    <div><h4>The site</h4>
+      <a href="how-it-happens.html">How It Happens</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a><a href="find-your-campaign.html">Find your campaign</a></div>
+    <div><h4>Places</h4><a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a></div>
+    <div><h4>Read</h4>
+      <a href="#">From The Roots &mdash; the zine</a><a href="history.html">The preemption timeline</a><a href="#">For journalists</a><a href="#">Sample testimony</a></div>
+    <div><h4>Join</h4>
+      <a href="find-your-campaign.html">Campaigns near you</a><a href="#">Campaign updates</a><a href="#">Partner with us</a><a href="#">Tell us your story</a></div>
+    <div><h4>Advancement Project</h4>
+      <a href="about.html">About this project</a><a href="#">Contact</a><a href="#">Espa&ntilde;ol &mdash; the full site</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="fbase"><div class="cwrap">
+    <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
+    <span>Prototype &middot; August 2026</span>
+  </div></div>
+</footer>
+<script>
+(function(){
+  var bn=document.getElementById('botnav');
+  var links=[].slice.call(bn.querySelectorAll('.bnitems a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  document.getElementById('btop').onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+  var hero=document.querySelector('header.hero');
+  function tick(){
+    if(hero) bn.classList.toggle('show', hero.getBoundingClientRect().bottom<=8);
+    var best=-1;
+    secs.forEach(function(el,i){ if(el&&el.getBoundingClientRect().top<=200) best=i; });
+    links.forEach(function(a,i){a.classList.toggle('on',i===best)});
+  }
+  window.addEventListener('scroll',tick,{passive:true}); window.addEventListener('resize',tick); tick();
+})();
+</script>
+</body>
+</html>

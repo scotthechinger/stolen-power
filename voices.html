@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voices — People-Centered Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17140F;--cream:#FDF6E8;--cream2:#F3E8D4;--brick:#D64525;--amber:#F2A33C;--yellow:#FFC845;--green:#4F9B54;--purple:#8B4FA8;--blue:#2E6FD9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.vtop{background:var(--cream2);border-bottom:4px solid var(--ink)}
+.vtop .wrap{padding:54px 28px}
+.vtop .eyebrow{color:var(--brick);margin-bottom:14px}
+.vtop h1{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(34px,5.6vw,72px);line-height:.96;letter-spacing:-.03em;margin-bottom:18px;max-width:19ch}
+.vtop p{font-family:'Fraunces',Georgia,serif;font-size:clamp(18px,1.9vw,24px);line-height:1.38;max-width:60ch}
+.vshare{display:inline-block;margin-top:26px;background:var(--brick);color:#fff;padding:16px 24px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;text-decoration:none;border:3px solid var(--brick);border-radius:2px}
+.vshare:hover{background:var(--ink);border-color:var(--ink)}
+.fbar{background:var(--cream);border-bottom:3px solid var(--ink);position:sticky;top:72px;z-index:70}
+.fbar .wrap{padding:16px 28px;display:grid;gap:11px}
+.frow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.frow b{font-size:10px;letter-spacing:.17em;text-transform:uppercase;opacity:.5;width:104px;flex:none}
+.frow button{font:inherit;font-size:12.5px;font-weight:700;background:transparent;border:2px solid rgba(23,20,15,.26);padding:8px 14px;border-radius:2px;cursor:pointer}
+.frow button:hover{border-color:var(--ink);background:var(--yellow)}
+.frow button.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.search{font:inherit;font-size:14px;padding:9px 13px;border:2px solid rgba(23,20,15,.26);border-radius:2px;min-width:230px}
+.count{font-size:13px;opacity:.6;margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:34px 28px 60px;max-width:1240px;margin:0 auto}
+.vc{border:3px solid var(--ink);border-radius:3px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.vc .por{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-bottom:3px solid var(--ink);background:var(--cream2)}
+.vc .noimg{width:100%;aspect-ratio:1/1;border-bottom:3px dashed rgba(23,20,15,.3);background:repeating-linear-gradient(45deg,var(--cream2),var(--cream2) 12px,#EFE2C9 12px,#EFE2C9 24px);display:flex;align-items:center;justify-content:center;color:#8A8071;font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;text-align:center;padding:16px}
+.vc .in{padding:19px;display:flex;flex-direction:column;gap:13px;flex:1}
+.vc .vq{font-family:'Fraunces',Georgia,serif;font-size:18px;line-height:1.36;flex:1}
+.vc .vm{border-top:2px solid rgba(23,20,15,.14);padding-top:12px}
+.vc b{display:block;font-size:15px}
+.vc .rl{display:block;font-size:12.5px;opacity:.68;line-height:1.35}
+.vc .tp{display:inline-block;margin-top:11px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;border:2px solid rgba(23,20,15,.24);padding:4px 9px;border-radius:2px;opacity:.75}
+.vc.ph{border-style:dashed;background:var(--cream)}
+.vc.ph .vq{color:#7C7264;font-style:italic}
+.phtag{display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--amber);color:var(--ink);padding:4px 9px;border-radius:2px}
+.none{padding:60px 28px;font-family:'Fraunces';font-style:italic;opacity:.6;font-size:20px;max-width:1240px;margin:0 auto}
+.gap{border-top:4px solid var(--ink);background:var(--ink);color:var(--cream)}
+.gap .wrap{padding:52px 28px}
+.gap h3{font-family:'Archivo Black';font-size:clamp(22px,3vw,34px);margin-bottom:14px;max-width:24ch}
+.gap p{max-width:66ch;opacity:.85;margin-bottom:12px}
+.gap a{display:inline-block;margin-top:16px;background:var(--yellow);color:var(--ink);padding:16px 22px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px}
+.gap a:hover{background:var(--amber)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.frow b{width:100%}.fbar{position:static}}
+
+/* ===== SHARED CHROME (nav + footer) ===== */
+.pcpnav{position:sticky;top:0;z-index:90;background:#17140F;color:#FDF6E8;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif}
+.cwrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.pcpnav .cwrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:1440px}
+.pcplogo{font-family:'Archivo Black',Impact,sans-serif;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:#FDF6E8;white-space:nowrap}
+.pcplogo em{font-style:normal;color:#F2A33C}
+.pcplinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.pcplinks a{text-decoration:none;opacity:.82;color:#FDF6E8;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.pcplinks a:hover{opacity:1;color:#FFC845}
+.pcplinks a.on{opacity:1;color:#F2A33C;border-bottom-color:#F2A33C}
+.pcpcta{background:#D64525;color:#fff;padding:12px 18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap}
+.pcpcta:hover{background:#FFC845;color:#17140F}
+@media(max-width:1180px){.pcplogo em{display:none}}
+@media(max-width:1120px){.pcplinks{gap:13px;font-size:11px;letter-spacing:.07em}}
+@media(max-width:860px){.pcpnav .cwrap{height:auto;padding:9px 16px;flex-wrap:wrap;row-gap:8px}
+ .pcplinks{order:3;width:100%;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px}}
+
+/* ===== SUBNAV ===== */
+.subnav{position:sticky;z-index:80;background:#F3E8D4;color:#17140F;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif;top:62px}
+.subnav .cwrap{display:flex;align-items:center;gap:8px;height:52px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subnav .slab2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-right:6px;white-space:nowrap}
+.snl{display:flex;gap:6px;align-items:center;flex:1}
+.snl a,.snl button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snl a:hover,.snl button:hover{border-color:#17140F;background:#FDF6E8}
+.snl a.on,.snl button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+.snr{display:flex;gap:6px;margin-left:auto}
+@media(max-width:860px){.subnav{top:auto;position:sticky;top:0}.subnav .slab2{display:none}}
+
+/* ===== FOOTER ===== */
+.pcpfoot{background:#17140F;color:#FDF6E8;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55}
+.fclose{background:#D64525;color:#fff;border-bottom:4px solid #17140F}
+.fclose .cwrap{padding:64px 28px;text-align:center}
+.fclose p{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(28px,5vw,64px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:52px 28px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:'DM Sans';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F2A33C;margin:0 0 11px}
+.fgrid a{display:block;opacity:.8;text-decoration:none;color:#FDF6E8;margin-bottom:7px;font-size:14px}
+.fgrid a:hover{opacity:1;color:#FFC845}
+.fbase{border-top:1px solid rgba(253,246,232,.2)}
+.fbase .cwrap{padding:20px 28px;font-size:12px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr}}
+
+</style></head>
+<body>
+<nav class="pcpnav"><div class="cwrap">
+  <a class="pcplogo" href="pcp-home.html">ADVANCEMENT PROJECT <em>&middot; PEOPLE-CENTERED POWER</em></a>
+  <div class="pcplinks"><a href="how-it-happens.html">How It Happens</a><a href="place-houston.html">Places</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html" class="on">Voices</a></div>
+  <a class="pcpcta" href="find-your-campaign.html">Find your campaign</a>
+</div></nav>
+<header class="vtop"><div class="wrap">
+  <div class="eyebrow">Voices &middot; in their own words</div>
+  <h1>Nobody here is explaining a policy. They are describing their day to day.</h1>
+  <p>Parents, students, teachers and organizers who watched a decision get moved out of reach. Most had never heard the word for what was happening. All could describe the impact precisely.</p>
+  <a class="vshare" href="#">Share your story &rarr;</a>
+</div></header>
+
+<div class="fbar"><div class="wrap">
+  <div class="frow" id="f-place"><b>Place</b></div>
+  <div class="frow" id="f-who"><b>Who&rsquo;s speaking</b></div>
+  <div class="frow"><b>Search</b><input class="search" id="q" placeholder="a word, a name, a school&hellip;"><span class="count" id="count"></span></div>
+</div></div>
+
+<div class="grid" id="grid"></div>
+<div class="none" id="none" style="display:none"></div>
+
+<footer class="pcpfoot">
+  <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
+  <div class="fgrid">
+    <div><h4>The site</h4>
+      <a href="how-it-happens.html">How It Happens</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a><a href="find-your-campaign.html">Find your campaign</a></div>
+    <div><h4>Places</h4><a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a></div>
+    <div><h4>Read</h4>
+      <a href="#">From The Roots &mdash; the zine</a><a href="history.html">The preemption timeline</a><a href="#">For journalists</a><a href="#">Sample testimony</a></div>
+    <div><h4>Join</h4>
+      <a href="find-your-campaign.html">Campaigns near you</a><a href="#">Campaign updates</a><a href="#">Partner with us</a><a href="#">Tell us your story</a></div>
+    <div><h4>Advancement Project</h4>
+      <a href="about.html">About this project</a><a href="#">Contact</a><a href="#">Espa&ntilde;ol &mdash; the full site</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="fbase"><div class="cwrap">
+    <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
+    <span>Prototype &middot; August 2026</span>
+  </div></div>
+</footer>
+<script>
+var V=[{"place": "Houston", "who": "Parents", "name": "Toshiba Dixon", "role": "Parent", "school": "Port Houston Elem", "q": "The decision makers seem most accountable to the politicians in Austin that have assigned them to their positions and in a democratic environment, that would be us. However, in this takeover environment, our voices have been displaced.", "img": "img/toshiba-dixon.jpg", "ph": false}, {"place": "Houston", "who": "Teachers", "name": "MinhDan Tran", "role": "Teacher", "school": "Sharpstown HS", "q": "We did have an election this past November where we elected four school board positions, but the people we elected have no voting power, so they're kind of there.", "img": "img/minhdan-tran.jpg", "ph": false}, {"place": "Houston", "who": "Organizers", "name": "Kourtney Revels", "role": "Parent / organizer", "school": "BC Elmore Elem", "q": "After the state takeover school for my child became like prison. And those are her words.", "img": "img/kourtney-revels.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Drapon Allen", "role": "Student", "school": "Worthing HS", "q": "After the takeover, it felt imprisoning. They were trying to hold us back from our true education.", "img": "img/drapon-allen.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Zachary Youngblood", "role": "Student", "school": "Northside HS", "q": "They watched us on the cameras 24 7. They had me in a fly zone basically. I walked around too much but I would go to the restroom and then go back to class.", "img": "img/zachary-youngblood.jpg", "ph": false}, {"place": "Houston", "who": "Teachers", "name": "Melissa Yarborough", "role": "Parent + former teacher", "school": "Pew Elem / Navarro MS", "q": "There is no accountability to parents. There's no accountability to the students in the room. There's no accountability to the community, to Houston. It's only to this one man. It's a very strange situation.", "img": "img/melissa-yarborough.jpg", "ph": false}, {"place": "Houston", "who": "Parents", "name": "Fred Woods", "role": "Parent", "school": "Crockett Elem", "q": "The library is it We do not have a librarian and parents help to run the library. It's a volunteer basis so that kids can still have access to books.", "img": "img/fred-woods.jpg", "ph": false}, {"place": "Houston", "who": "Parents", "name": "Deanna Johnson", "role": "Parent", "school": "Francis Scott Key MS", "q": "Parents were not given any type of say, so there are board meetings, but it's just like talking to a brick wall.", "img": "img/deanna-johnson.jpg", "ph": false}, {"place": "Houston", "who": "Parents", "name": "Matthew Wright", "role": "Parent", "school": "Burris Elem", "q": "Because at the end of these experiments, we will basically be looking at data. And I don't think that we should look at human beings as data points.", "img": "img/matthew-wright.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Aubrey Barr", "role": "Student", "school": "Northside HS", "q": "We just have to move on. There's not much a teacher can say other than we have to move on.", "img": "img/aubrey-barr.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Emily Yanez", "role": "Student", "school": "Northside HS", "q": "Since getting into high school, I've noticed that since NES has begun, I'm not surprised anymore when I hear a teacher quitting or leaving because it's gotten so used to me. I gotten so used to it because of how much it has happened over the years.", "img": "img/emily-yanez.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Michaela Castillo", "role": "Student", "school": "Northside HS", "q": "When they're instructing the class, I feel like they do have a limit of three minutes to teach one slide and then move on. And if you don't get the information within those three minutes, then they move on to the next slide and you miss out on the learning.", "img": "img/michaela-castillo.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Bianca Johnson", "role": "Student, 6th grade", "school": "Francis Scott Key MS", "q": "The team center, you don't learn, you're just sitting there isolated basically, and you're just writing on a piece of paper.", "img": "img/bianca-johnson.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Micah Gabay", "role": "Student", "school": "Worthing HS (former)", "q": "We also knew that AI was used to make our lessons because it literally said this was made by chat, BT Chat GPT at the bottom of our lesson. So we're like, shouldn't you be making the lesson? Why are we learning something that chat team made.", "img": "img/micah-gabay.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Gabriel Morales", "role": "Student, age 8", "school": "Browning Elem", "q": "In art class stuff that, so we can't have no more paints, right? We can't have no more paints and oil pastel.", "img": "img/gabriel-morales.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Aubra Grimaldo", "role": "Student, age 9", "school": "Browning Elem", "q": "It's reading because Ms. S mom left and it wasn't that fun. She left. I was happy when she was there. She was kind and she wasn't real.", "img": "img/aubra-grimaldo.jpg", "ph": false}, {"place": "Houston", "who": "Parents", "name": "Tanya Angeles", "role": "Parent", "school": "Isaacs Elem", "q": "Not stable enough. I mean, that has not made me feel stable enough, knowing that my child is probably dealing with a lot of changes by starting to learn and know the teacher, how she is getting used to her teaching methods…", "img": "img/tanya-angeles.jpg", "ph": false}, {"place": "Houston", "who": "Parents", "name": "Veronica Guzman", "role": "Parent", "school": "Browning Elem", "q": "They've let go of our custodian staff. We had a really, really nice man. His name was Mr. Bravo, and he was forced into retirement, so he left the school and he was really, really good with the kids. The kids loved him…", "img": "img/veronica-guzman.jpg", "ph": false}, {"place": "Houston", "who": "Organizers", "name": "Nalleli Hidalgo", "role": "Community ally, CVPE", "school": "Furr HS / XQ", "q": "I know that there's a lot of stories that may never be shared, but I hope that at some point they are so that everybody really knows what unfolded during these last three to two years here in this specific space around education.", "img": "img/nalleli-hidalgo.jpg", "ph": false}, {"place": "Houston", "who": "Students", "name": "Yates student (name withheld)", "role": "Student, age 16", "school": "Jack Yates HS", "q": "It's a really cultural school. It's a lot of positivity over there and it's a lot of people who just make the school feel like it's just like family in there because it's a lot of bloodlines in that school running down.", "img": "img/yates-student.jpg", "ph": false}, {"place": "Jackson", "who": "Parents", "name": "Name pending", "role": "Parent, Jackson", "school": "Awaiting capture", "q": "Placeholder. This is where a Jackson resident describes what it is like to pay for a water system for decades and then be told the decision about it belongs to someone else.", "img": "", "ph": true}, {"place": "Jackson", "who": "Organizers", "name": "Rukia Lumumba", "role": "Organizer, Jackson", "school": "People&rsquo;s Advocacy Institute", "q": "One state can change a law we agreed to as a community.", "img": "", "ph": false}, {"place": "Jackson", "who": "Students", "name": "Name pending", "role": "Student, Jackson", "school": "Awaiting capture", "q": "Placeholder. This is where a young person in Jackson describes what a boil notice does to an ordinary week.", "img": "", "ph": true}, {"place": "Virginia", "who": "Organizers", "name": "Maria Robalino", "role": "Organizer, Virginia", "school": "Virginia Home Rule Project", "q": "They can&rsquo;t even install a speed bump in front of a school without state permission.", "img": "", "ph": false}, {"place": "Virginia", "who": "Elected officials", "name": "Name pending", "role": "Local official, Virginia", "school": "Awaiting capture", "q": "Placeholder. This is where a Virginia local official describes governing in a state where every decision requires asking Richmond first.", "img": "", "ph": true}, {"place": "Virginia", "who": "Parents", "name": "Name pending", "role": "Parent, Virginia", "school": "Awaiting capture", "q": "Placeholder. This is where a Virginia resident says what they would do with real local power &mdash; the question people answer immediately, and officials often cannot.", "img": "", "ph": true}, {"place": "St. Louis", "who": "Organizers", "name": "Name pending", "role": "Organizer, St. Louis", "school": "Awaiting capture", "q": "Placeholder. This is where a St. Louis organizer describes winning local control of the police by ballot in 2012, and watching the state take it back in 2025.", "img": "", "ph": true}, {"place": "St. Louis", "who": "Parents", "name": "Name pending", "role": "Resident, St. Louis", "school": "Awaiting capture", "q": "Placeholder. This is where a St. Louis resident describes paying a quarter of the city budget for a department the city no longer controls.", "img": "", "ph": true}];
+var F={place:'All',who:'All'};
+var PLACES=['All','Houston','Jackson','Virginia','St. Louis'];
+var WHO=['All'].concat([...new Set(V.map(v=>v.who))].sort());
+function chips(id,key,list){
+  var el=document.getElementById(id);
+  list.forEach(function(t){
+    var b=document.createElement('button');
+    b.textContent=t; if(t===F[key])b.className='on';
+    b.onclick=function(){F[key]=t;[].forEach.call(el.querySelectorAll('button'),function(x){x.classList.remove('on')});b.classList.add('on');render();};
+    el.appendChild(b);
+  });
+}
+chips('f-place','place',PLACES); chips('f-who','who',WHO);
+function render(){
+  var q=document.getElementById('q').value.toLowerCase();
+  var rows=V.filter(function(v){
+    if(F.place!=='All'&&v.place!==F.place)return false;
+    if(F.who!=='All'&&v.who!==F.who)return false;
+    if(q&&(v.q+' '+v.name+' '+v.school+' '+v.role).toLowerCase().indexOf(q)<0)return false;
+    return true;
+  });
+  document.getElementById('count').textContent=rows.length+' of '+V.length;
+  var g=document.getElementById('grid'), n=document.getElementById('none');
+  if(!rows.length){g.innerHTML='';n.style.display='block';n.textContent='Nothing matches that combination yet.';return;}
+  n.style.display='none';
+  g.innerHTML=rows.map(function(v){
+    var por = v.img ? '<img class="por" src="'+v.img+'" alt="Portrait of '+v.name+'" loading="lazy">'
+                    : '<div class="noimg">Portrait<br>to come</div>';
+    return '<figure class="vc'+(v.ph?' ph':'')+'">'+por+'<div class="in">'+
+      (v.ph?'<span class="phtag">Placeholder</span>':'')+
+      '<blockquote class="vq">&ldquo;'+v.q+'&rdquo;</blockquote>'+
+      '<figcaption class="vm"><b>'+v.name+'</b><span class="rl">'+v.role+(v.school?' &middot; '+v.school:'')+'</span>'+
+      '<span class="tp">'+v.place+'</span></figcaption></div></figure>';
+  }).join('');
+}
+document.getElementById('q').addEventListener('input',render);
+render();
+</script>
+</body></html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How It Happens — People-Centered Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17140F;--cream:#FDF6E8;--cream2:#F3E8D4;--brick:#D64525;--amber:#F2A33C;--yellow:#FFC845;--green:#4F9B54;--purple:#8B4FA8;--blue:#2E6FD9;--muted:#6B6259}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body.textonly .panel{opacity:1!important;transform:none!important}
+body.textonly section{min-height:0!important;padding:26px 0!important}
+body.textonly .art{display:none}
+
+.logo{font-family:'Archivo Black';font-size:13px}.logo a{color:var(--amber);text-decoration:none}
+.tools{display:flex;gap:8px}
+.btn{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:8px 13px;border:2px solid var(--cream);background:transparent;color:var(--cream);cursor:pointer;border-radius:2px;font-family:inherit}
+.btn:hover,.btn.on{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.rail{position:fixed;margin-top:0;left:0;top:56px;bottom:0;width:6px;background:#E4D9C4;z-index:90}
+#rf{width:100%;background:var(--brick);height:0}
+main{max-width:1160px;margin:0 auto;padding:56px 26px 0}
+section{min-height:auto;display:flex;align-items:center;padding:34px 0;position:relative}
+.panel{max-width:770px;opacity:0;transform:translateY(16px);transition:opacity .45s,transform .45s;width:100%}
+.panel.in{opacity:1;transform:none}
+.wide{max-width:1030px}
+.eyebrow{font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--brick);margin-bottom:13px}
+h1{font-family:'Archivo Black';font-size:clamp(40px,7vw,80px);line-height:.95;letter-spacing:-.025em;margin-bottom:20px}
+h2{font-family:'Fraunces';font-weight:700;font-size:clamp(27px,4vw,48px);line-height:1.07;margin-bottom:17px}
+p{font-size:clamp(17px,1.35vw,20px);margin-bottom:15px;max-width:62ch}
+.lede{font-family:'Fraunces';font-size:clamp(19px,1.7vw,24px)}
+em.hl{font-style:normal;background:var(--yellow);padding:0 5px;box-decoration-break:clone}
+.small{font-size:14px;color:var(--muted)}
+.quote{border-left:5px solid var(--brick);padding:3px 0 3px 19px;margin:20px 0;font-family:'Fraunces';font-style:italic;font-size:clamp(18px,1.8vw,25px);line-height:1.32}
+.quote cite{display:block;margin-top:8px;font-family:'DM Sans';font-style:normal;font-size:13.5px;color:var(--muted)}
+.banner{background:var(--ink);color:var(--cream);padding:32px;margin:26px 0;border-radius:3px}
+.banner p{font-family:'Fraunces';font-size:clamp(21px,2.3vw,31px);line-height:1.2;margin:0;max-width:none}
+.flag{background:#FFF3D6;border-left:5px solid var(--amber);padding:12px 15px;font-size:13.5px;color:#6a5320;margin:16px 0;max-width:66ch}
+.beats>div{padding:15px 0;border-bottom:1px dashed #C9BCA6}.beats>div:last-child{border-bottom:0}.beats p{margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--ink);margin:24px 0;border-radius:3px;overflow:hidden}
+.split>div{padding:25px}
+.split .g{background:var(--green);color:#07200a}.split .p{background:var(--purple);color:#fff;border-left:3px solid var(--ink)}
+.split h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:9px;font-family:'DM Sans'}
+.split p{font-size:16px;max-width:none}
+.wall{display:grid;grid-template-columns:1fr 1fr;border:3px solid var(--ink);margin:24px 0;border-radius:3px;overflow:hidden}
+.wall>div{padding:25px}.wall .a{background:var(--cream2)}.wall .b{background:var(--brick);color:#fff}
+.wall h3{font-family:'Archivo Black';font-size:25px;margin-bottom:8px}.wall p{font-size:16px;max-width:none}
+.statelist>div{padding:12px 0;border-bottom:1px solid #D8CFC2;font-size:16.5px}
+.statelist b{font-family:'Archivo Black';font-size:14px}
+/* problem chooser */
+.probs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.prob{border:3px solid var(--ink);background:var(--cream);padding:26px 22px;cursor:pointer;border-radius:3px;text-align:left;font:inherit;color:inherit;transition:transform .17s,box-shadow .17s}
+.prob:hover{transform:translateY(-6px);box-shadow:8px 8px 0 var(--ink)}
+.prob .ic{font-size:38px;line-height:1;margin-bottom:14px;display:block}
+.prob h3{font-family:'Fraunces';font-weight:700;font-size:23px;line-height:1.15;margin-bottom:9px}
+.prob p{font-size:15px;margin:0;max-width:none;color:#4a423a}
+.prob.a{background:#EAF3EA}.prob.b{background:#FDECE7}.prob.c{background:#E7F0FD}
+.path{display:none}.path.show{display:block}
+.hinge{background:var(--brick);color:#fff;padding:38px;margin:26px 0;border-radius:3px}
+.hinge .eyebrow{color:#FFD9CE}
+.hinge p{font-family:'Archivo Black';font-size:clamp(26px,3.6vw,46px);line-height:1.02;margin:0;max-width:none}
+.cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
+.cta a,.cta button{font-size:13px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:14px 20px;border:3px solid var(--ink);background:var(--yellow);color:var(--ink);text-decoration:none;border-radius:2px;cursor:pointer;font-family:inherit}
+.cta a:hover,.cta button:hover{background:var(--ink);color:var(--yellow)}
+.tag{position:absolute;left:-56px;top:60px;writing-mode:vertical-rl;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:700}
+footer{border-top:3px solid var(--ink);margin-top:60px;padding:40px 0 66px;text-align:center}
+footer p{color:var(--muted);font-size:13.5px;max-width:70ch;margin:0 auto}
+@media(max-width:900px){.probs{grid-template-columns:1fr}.split,.wall{grid-template-columns:1fr}.split .p{border-left:0;border-top:3px solid var(--ink)}.tag{display:none}section{padding:26px 0}}
+
+
+.exits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 6px}
+.ex{display:block;text-decoration:none;border:3px solid currentColor;border-radius:3px;padding:20px;transition:background .14s}
+.ex:hover{background:rgba(255,200,69,.3)}
+.ex b{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:clamp(18px,2vw,23px);line-height:1.08;letter-spacing:-.01em;display:block;margin-bottom:9px}
+.ex span{display:block;font-size:15.5px;line-height:1.45;opacity:.82}
+.placesrow{margin-top:26px;padding-top:22px;border-top:3px solid rgba(23,20,15,.18)}
+.placesrow a{display:inline-block;margin:0 7px 7px 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;text-decoration:none;border:3px solid currentColor;padding:11px 16px;border-radius:2px}
+.placesrow a:hover{background:rgba(255,200,69,.4)}
+@media(max-width:820px){.exits{grid-template-columns:1fr}}
+
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:22px 0}
+.twocol h3{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;opacity:.65}
+.twocol p{margin-bottom:12px}
+@media(max-width:820px){.twocol{grid-template-columns:1fr;gap:18px}}
+
+.nextstep{margin-top:24px;padding-top:16px;border-top:2px solid rgba(23,20,15,.15)}
+.nextstep button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:3px solid currentColor;color:inherit;padding:11px 18px;border-radius:2px;cursor:pointer}
+.nextstep button:hover{background:rgba(255,200,69,.4)}
+body.textonly .nextstep{display:none}
+
+/* ===== ASK / interactive choice ===== */
+.ask{margin:26px 0 6px;border-top:3px solid rgba(23,20,15,.16);padding-top:22px}
+.ask .q{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(19px,2.3vw,27px);line-height:1.16;letter-spacing:-.01em;margin-bottom:16px}
+.opts{display:grid;gap:9px;max-width:56ch}
+.opt{display:flex;gap:13px;align-items:flex-start;text-align:left;font:inherit;font-size:17px;color:inherit;background:transparent;border:3px solid rgba(23,20,15,.3);border-radius:3px;padding:14px 16px;cursor:pointer;transition:background .12s,border-color .12s}
+.opt:hover{border-color:currentColor;background:rgba(255,200,69,.28)}
+.opt .k{font-family:'Archivo Black',Impact,sans-serif;font-size:13px;opacity:.5;flex:none;line-height:1.5}
+.ask.done .opt{opacity:.55}
+.ask.done .opt:hover{opacity:1;background:rgba(255,200,69,.28)}
+.ask.done .opt.picked{opacity:1;border-color:currentColor;background:rgba(255,200,69,.42)}
+.resp{display:none;margin-top:16px;border-left:6px solid #D64525;padding:4px 0 4px 16px;font-family:'Fraunces',Georgia,serif;font-size:18px;line-height:1.45}
+.resp.show{display:block}
+.after{display:none;margin-top:22px}
+.after.show{display:block;animation:fadein .4s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+body.textonly .opt{display:none}
+body.textonly .resp,body.textonly .after{display:block}
+body.textonly .ask .q{opacity:.6;font-size:15px}
+
+/* ===== SHARED CHROME (nav + footer) ===== */
+.pcpnav{position:sticky;top:0;z-index:90;background:#17140F;color:#FDF6E8;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif}
+.cwrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.pcpnav .cwrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:1440px}
+.pcplogo{font-family:'Archivo Black',Impact,sans-serif;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:#FDF6E8;white-space:nowrap}
+.pcplogo em{font-style:normal;color:#F2A33C}
+.pcplinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.pcplinks a{text-decoration:none;opacity:.82;color:#FDF6E8;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.pcplinks a:hover{opacity:1;color:#FFC845}
+.pcplinks a.on{opacity:1;color:#F2A33C;border-bottom-color:#F2A33C}
+.pcpcta{background:#D64525;color:#fff;padding:12px 18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap}
+.pcpcta:hover{background:#FFC845;color:#17140F}
+@media(max-width:1180px){.pcplogo em{display:none}}
+@media(max-width:1120px){.pcplinks{gap:13px;font-size:11px;letter-spacing:.07em}}
+@media(max-width:860px){.pcpnav .cwrap{height:auto;padding:9px 16px;flex-wrap:wrap;row-gap:8px}
+ .pcplinks{order:3;width:100%;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px}}
+
+/* ===== SUBNAV ===== */
+.subnav{position:sticky;z-index:80;background:#F3E8D4;color:#17140F;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif;top:72px}
+.subnav .cwrap{display:flex;align-items:center;gap:10px;height:60px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subnav .slab2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-right:6px;white-space:nowrap}
+.snl{display:flex;gap:6px;align-items:center;flex:1}
+.snl a,.snl button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snl a:hover,.snl button:hover{border-color:#17140F;background:#FDF6E8}
+.snl a.on,.snl button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+.snr{display:flex;gap:6px;margin-left:auto}
+.snr button,.snr a{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snr button:hover,.snr a:hover{border-color:#17140F;background:#FDF6E8}
+.snr button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+main section,main .panel{scroll-margin-top:145px}
+@media(max-width:860px){.subnav{top:auto;position:sticky;top:0}.subnav .slab2{display:none}}
+
+/* ===== FOOTER ===== */
+.pcpfoot{background:#17140F;color:#FDF6E8;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55}
+.fclose{background:#D64525;color:#fff;border-bottom:4px solid #17140F}
+.fclose .cwrap{padding:64px 28px;text-align:center}
+.fclose p{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(28px,5vw,64px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:52px 28px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:'DM Sans';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F2A33C;margin:0 0 11px}
+.fgrid a{display:block;opacity:.8;text-decoration:none;color:#FDF6E8;margin-bottom:7px;font-size:14px}
+.fgrid a:hover{opacity:1;color:#FFC845}
+.fbase{border-top:1px solid rgba(253,246,232,.2)}
+.fbase .cwrap{padding:20px 28px;font-size:12px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:1080px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr 1fr}}
+
+/* ===== BOTTOM SUBNAV (shared) ===== */
+.botnav{position:fixed;left:0;right:0;bottom:0;top:auto;height:auto;z-index:95;background:#17140F;border-top:3px solid #17140F;
+  box-shadow:0 -6px 26px rgba(23,20,15,.22);font-family:'DM Sans',system-ui,sans-serif}
+.botnav .bwrap{display:flex;align-items:stretch;width:100%}
+.bnlab{flex:none;display:flex;align-items:center;padding:0 18px;font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:700;color:#F2A33C;border-right:1px solid rgba(253,246,232,.16);white-space:nowrap}
+.bnitems{display:flex;flex:1;min-width:0}
+.bnitems a,.bnitems button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font:inherit;background:transparent;border:none;border-right:1px solid rgba(253,246,232,.16);
+  color:#FDF6E8;padding:12px 6px;cursor:pointer;text-decoration:none;transition:background .14s,color .14s}
+.bnitems a:last-child,.bnitems button:last-child{border-right:none}
+.bnitems .bnum{font-family:'Archivo Black',Impact,sans-serif;font-size:10px;letter-spacing:.04em;color:#F2A33C;line-height:1}
+.bnitems .blab{font-size:11.5px;font-weight:700;letter-spacing:.03em;line-height:1.15;text-align:center;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.bnitems a:hover,.bnitems button:hover{background:rgba(242,163,60,.16)}
+.bnitems a.on,.bnitems button.on{background:#F2A33C;color:#17140F}
+.bnitems a.on .bnum,.bnitems button.on .bnum{color:#17140F}
+.bntools{flex:none;display:flex;border-left:1px solid rgba(253,246,232,.16)}
+.bntools button,.bntools a{display:flex;align-items:center;font:inherit;font-size:10.5px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;background:transparent;border:none;border-right:1px solid rgba(253,246,232,.16);
+  color:#FDF6E8;padding:0 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.bntools button:last-child,.bntools a:last-child{border-right:none}
+.bntools button:hover,.bntools a:hover{background:rgba(242,163,60,.16);color:#F2A33C}
+.bntools button.on{background:#FFC845;color:#17140F}
+body{padding-bottom:66px}
+@media(max-width:900px){
+  .bnlab{display:none}
+  .bnitems .blab{font-size:10px}
+  .bnitems a,.bnitems button{padding:10px 3px}
+  .bntools button,.bntools a{padding:0 10px;font-size:9.5px}
+  body{padding-bottom:60px}
+}
+@media(max-width:600px){.bnitems .blab{display:none}.bnitems .bnum{font-size:12px}}
+</style>
+</head>
+<body>
+<nav class="pcpnav"><div class="cwrap">
+  <a class="pcplogo" href="pcp-home.html">ADVANCEMENT PROJECT <em>&middot; PEOPLE-CENTERED POWER</em></a>
+  <div class="pcplinks"><a href="how-it-happens.html" class="on">How It Happens</a><a href="place-houston.html">Places</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a></div>
+  <a class="pcpcta" href="find-your-campaign.html">Find your campaign</a>
+</div></nav>
+<nav class="botnav" id="botnav" aria-label="Section navigation"><div class="bwrap">
+  <span class="bnlab">How it happens</span>
+  <div class="bnitems">
+    <a href="#s1"><span class="bnum">01</span><span class="blab">The problem</span></a>
+    <a href="#choose"><span class="bnum">02</span><span class="blab">Your choice</span></a>
+    <a href="#path"><span class="bnum">03</span><span class="blab">Your path</span></a>
+    <a href="#widen"><span class="bnum">04</span><span class="blab">Widen out</span></a>
+    <a href="#hist"><span class="bnum">05</span><span class="blab">The history</span></a>
+    <a href="#back"><span class="bnum">06</span><span class="blab">Where to now</span></a>
+  </div>
+  <div class="bntools">
+    <button id="tt">Text-only</button>
+    <button onclick="reset()">Start over</button>
+  </div>
+</div></nav>
+
+<div class="rail"><div id="rf"></div></div>
+
+<main>
+
+<section id="s1"><div class="panel">
+  <div class="eyebrow">How it happens</div>
+  <h1>You already know how this feels.<br>You may not know what it's called.</h1>
+  <p class="lede">Three minutes. No legal vocabulary. We start with a problem you have probably had.</p>
+  <p class="small">↓ Scroll</p>
+</div></section>
+
+<section><div class="panel"><span class="tag">The problem</span>
+  <h2>Something is wrong, and it is clear to you what&rsquo;s needed.</h2>
+  <p>It is not a mystery. It is not a policy debate. It's the kind of thing where everyone who lives near you already agrees, because everyone who lives near you can see it too.</p>
+  <p><strong>It just needs fixing.</strong></p>
+</div></section>
+
+<!-- CHOOSER -->
+<section id="choose"><div class="panel wide">
+  <div class="eyebrow">Pick one</div>
+  <h2>Which problem do you know best?</h2>
+  <p>Choose the one you can relate most to. We'll walk you through what you would do about it — and who is actually allowed to decide.</p>
+  <div class="probs">
+    <button class="prob a" onclick="go('A')">
+      <span class="ic">🏠</span>
+      <h3>Something's wrong with your home</h3>
+      <p>The heat doesn't work in January. There are rats. The rent went up five hundred dollars. There's no ramp and your mother uses a wheelchair.</p>
+    </button>
+    <button class="prob b" onclick="go('B')">
+      <span class="ic">🏫</span>
+      <h3>Something's wrong at your kid's school</h3>
+      <p>The library closed. The art teacher is gone. Your child comes home saying they're stupid. AI is writing your kids&rsquo; assignments. Nobody will tell you why any of it happened.</p>
+    </button>
+    <button class="prob c" onclick="go('C')">
+      <span class="ic">🚰</span>
+      <h3>Something's wrong with your water</h3>
+      <p>It runs brown. There's a boil notice again. You've been buying bottled water for your family for longer than you want to admit.</p>
+    </button>
+  </div>
+</div></section>
+
+<span id="path"></span>
+<!-- ================= PATH A : HOME → VIRGINIA ================= -->
+<div class="path" id="pA">
+
+<section><div class="panel"><span class="tag">Your home</span>
+  <div class="eyebrow">Your home</div>
+  <h2>So you do the thing you're supposed to do.</h2>
+  <p>You talk to your neighbors and find out it isn't just your unit. It's the building. Maybe it's the block.</p>
+<div class="ask" data-correct="1">
+  <p class="q">Who do you take it to?</p>
+  <div class="opts"><button class="opt" data-i="0"><span class="k">A</span><span>Your landlord</span></button><button class="opt" data-i="1"><span class="k">B</span><span>Your city council</span></button><button class="opt" data-i="2"><span class="k">C</span><span>Your state legislator</span></button></div>
+  <div class="resp" data-i="0">You tried that. Twice. That's how you ended up looking for someone with actual authority.</div><div class="resp" data-i="1">Right. The people you voted for, whose office is a bus ride away, whose names you know.</div><div class="resp" data-i="2">Not theirs to fix. Housing conditions should be a local decision, made locally.</div>
+  <div class="after"><p>So you go to <strong>your city council</strong>. You speak in the two minutes they give you. You bring people. You come back next month, and the month after.</p></div>
+</div>
+</div></section>
+
+<section><div class="panel">
+  <h2>And it works.</h2>
+  <p>The council votes yes. Your city passes a tenant protection, or a heat standard, or a cap on what a landlord can raise in a year.</p>
+  <p class="lede"><strong>You won. Not because anyone did you a favor — because you organized and the people who should make decisions were close enough to reach.</strong></p>
+<div class="ask" data-correct="1">
+  <p class="q">So that's it. You won. Right?</p>
+  <div class="opts"><button class="opt" data-i="0"><span class="k">A</span><span>Right. We won the vote.</span></button><button class="opt" data-i="1"><span class="k">B</span><span>Not so fast. Somebody can still undo this.</span></button></div>
+  <div class="resp" data-i="0">That is what winning a vote is supposed to mean.</div><div class="resp" data-i="1">Somebody can. And they will — from a building far away you have never been inside.</div>
+  <div class="after"><p class="lede">Keep going.</p></div>
+</div>
+</div></section>
+
+<section><div class="panel wide">
+  <h2>Then, hours away, in another city you may have never visited —</h2>
+  <div class="split">
+    <div class="g"><h3>What you did</h3><p>Organized your neighbors. Went to every meeting. Made the argument. Won a vote in a body you elected, in the city where you pay rent and taxes.</p><p style="font-family:Fraunces;font-style:italic;margin-top:12px"><strong>“We have a voice in this house.”</strong></p></div>
+    <div class="p"><h3>What they did</h3><p>Passed a sentence or two making your rule illegal. Not just yours — any rule like it, in any city in the state, forever.</p><p style="font-family:Fraunces;font-style:italic;margin-top:12px"><strong>Nobody came to tell you. You found out when nothing changed.</strong></p></div>
+  </div>
+  <p>The problem was the same. The organizing was the same. You were the same. The only thing that changed was <em class="hl">who was allowed to decide.</em></p>
+</div></section>
+
+<section><div class="panel">
+  <div class="hinge">
+    <div class="eyebrow">And now the part that isn't hypothetical</div>
+    <p>In Virginia, you wouldn't have gotten as far as the vote.</p>
+  </div>
+  <h2>Virginia cities have never had what&rsquo;s called &ldquo;home rule.&rdquo; Not lost it — never had it.</h2>
+  <p>Virginia runs on something called Dillon's Rule: a locality can only do what the state has explicitly given it permission to do. Everything else requires asking. A Virginia city generally cannot raise its own minimum wage. It often cannot protect its tenants. It cannot decide how to raise its own revenue without going to Richmond first.</p>
+  </div></section>
+
+<section><div class="panel">
+  <h2>Everything. It means everything.</h2>
+  <div class="quote">They can't even install a speed bump in front of a school without state permission.<cite>— Maria Robalino, Virginia Home Rule Project</cite></div>
+  <p>Local officials describe it as <em style="font-family:Fraunces">begging for the leftovers of power</em>.</p>
+</div></section>
+
+<section><div class="panel">
+  <h2>The result is more than just stolen power.</h2>
+  <p>Ask Virginia residents what they'd do with real local power and they answer immediately. They have lists. They've been waiting.</p>
+  <p>Ask local officials the same question and many of them can't picture it — because they have never once governed in a world where it existed.</p>
+  <div class="banner"><p>That is what a hundred and fifty years of permission does. It doesn't only take your power. Eventually it takes your ability to imagine having had it.</p></div>
+  <p>A bill is being drafted right now to change that, for the first time in the state's history.</p>
+  <div class="cta"><a href="#widen">This is not only Virginia →</a><button onclick="reset()">← Explore a different county</button></div>
+</div></section>
+</div>
+
+<!-- ================= PATH B : SCHOOL → HOUSTON ================= -->
+<div class="path" id="pB">
+
+<section><div class="panel"><span class="tag">Your kid's school</span>
+  <div class="eyebrow">Your child's school</div>
+  <h2>So you do the thing you're supposed to do.</h2>
+  <p>You email the teacher. You ask the principal. You find out from other parents in the group chat or pickup line that it isn't just your kid's class — it's the whole school, and probably the school down the road.</p>
+<div class="ask" data-correct="1">
+  <p class="q">Who actually decides this?</p>
+  <div class="opts"><button class="opt" data-i="0"><span class="k">A</span><span>The principal</span></button><button class="opt" data-i="1"><span class="k">B</span><span>The school board</span></button><button class="opt" data-i="2"><span class="k">C</span><span>The state education agency</span></button></div>
+  <div class="resp" data-i="0">The principal is following a policy somebody else wrote. Keep going up.</div><div class="resp" data-i="1">Right. In almost every district in America, you help elect it.</div><div class="resp" data-i="2">Hold that thought.</div>
+  <div class="after"><p>So you go to <strong>the school board</strong> — the piece of government closest to your life, and you get a vote in who sits on it. That is the entire point of a school board.</p></div>
+</div>
+</div></section>
+
+<section><div class="panel">
+  <h2>And that used to be enough.</h2>
+  <p>Not perfect. But at least reachable.</p>
+<div class="ask" data-correct="1">
+  <p class="q">What made it reachable?</p>
+  <div class="opts"><button class="opt" data-i="0"><span class="k">A</span><span>They had to answer to voters</span></button><button class="opt" data-i="1"><span class="k">B</span><span>You could run into them at the grocery store</span></button><button class="opt" data-i="2"><span class="k">C</span><span>There was a complaints process</span></button></div>
+  <div class="resp" data-i="0">Part of it. But one parent in Houston put it more concretely than that.</div><div class="resp" data-i="1">Yes. Accountability is not a complaints process. It is a person you can run into.</div><div class="resp" data-i="2">There is always a complaints process. That is not the same thing.</div>
+  <div class="after"></div>
+</div>
+  <div class="quote">I knew who my board member was. I knew where they lived. They went to Phyllis Wheatley. I'm a community leader. I ran into her all the time. She has skin in the game. She came through HISD.<cite>— Fred Woods, Houston parent, third-generation HISD family</cite></div>
+  <p>That is what accountability actually is. Not a complaints process. A person with a stake in the community, in the schools, in you and your children.</p>
+</div></section>
+
+<section><div class="panel">
+  <div class="hinge">
+    <div class="eyebrow">And now the part that isn't hypothetical</div>
+    <p>In 2023, Texas removed Houston's elected school board.</p>
+  </div>
+  <p>The Texas Education Agency dissolved the board Houston voted for and installed a Board of Managers it appointed instead. More than 180,000 students, most of them Black and Latino. The stated reason was the performance of a single high school — Wheatley, a historically Black school in a neighborhood the state had disinvested in for decades.</p>
+  <p><strong>Parents did not vote on this. They were not asked.</strong></p>
+</div></section>
+
+<section><div class="panel">
+  <h2>Then the small things started going.</h2>
+  <div class="beats">
+    <div><p>The librarian was fired first. The library became a storage room, then a room they send children to when they fail the daily quiz.</p></div>
+    <div><p>The paints went. <em style="font-family:Fraunces">“They say it was too messy, but I'm just sad because you could just wash it off.”</em> — Gabriel, age 8</p></div>
+    <div><p>The bathrooms got locked for the first twenty minutes of every class, and the last twenty. Children had accidents.</p></div>
+    <div><p>Every lesson got a timer. Thirty seconds to discuss. <em style="font-family:Fraunces">“We just have to move on. There's not much a teacher can say other than we have to move on.”</em></p></div>
+    <div><p><strong>The books are still in the library. The children can see them through the glass. They are not allowed to touch them.</strong></p></div>
+  </div>
+</div></section>
+
+<section><div class="panel">
+  <h2>We interviewed twenty-one people in Houston. Over half used the same word: <em class="hl">prison</em>.</h2>
+  
+  <div class="quote">After the state takeover school for my child became like prison. And those are her words.<cite>— Kourtney Revels, quoting her nine-year-old daughter</cite></div>
+  <div class="quote">Being a student in HISD feels like being a prisoner.<cite>— Drapon Allen, 18</cite></div>
+  <div class="quote">School became like a prison. I felt like they were watching our every move. My students would come warn me when the principal was coming.<cite>— MinhDan Tran, physics teacher</cite></div>
+</div></section>
+
+<section><div class="panel">
+  <h2>And the school board? Houston kept voting for one.</h2>
+  <div class="quote">We did have an election this past November where we elected four school board positions, but the people we elected have no voting power.<cite>— MinhDan Tran</cite></div>
+  <div class="quote">The room was filled with parents and students opposing the closures, pleading with them. And we were met with a unanimous vote to close all the schools.<cite>— Toshiba Dixon, parent, Port Houston Elementary</cite></div>
+  <div class="banner"><p>“The decision makers seem most accountable to the politicians in Austin that have assigned them to their positions. And in a democratic environment, that would be us. However, in this takeover environment, our voices have been displaced.”</p><p style="font-family:DM Sans;font-size:13.5px;margin-top:14px;opacity:.72">— Toshiba Dixon, Houston</p></div>
+  <div class="cta"><a href="#widen">This is not only Houston →</a><button onclick="reset()">← Explore a different county</button></div>
+</div></section>
+</div>
+
+<!-- ================= PATH C : WATER → JACKSON ================= -->
+<div class="path" id="pC">
+
+<section><div class="panel"><span class="tag">Your water</span>
+  <div class="eyebrow">Your water</div>
+  <h2>So you do the thing you're supposed to do.</h2>
+  <div class="ask" data-correct="2">
+  <p class="q">Whose water is it?</p>
+  <div class="opts"><button class="opt" data-i="0"><span class="k">A</span><span>The state's</span></button><button class="opt" data-i="1"><span class="k">B</span><span>A private utility's</span></button><button class="opt" data-i="2"><span class="k">C</span><span>Ours</span></button></div>
+  <div class="resp" data-i="0">The state didn't build it and doesn't pay for it.</div><div class="resp" data-i="1">Not here. This one is municipal.</div><div class="resp" data-i="2">Yours. And that turns out to matter enormously.</div>
+  <div class="after"><p>You call the city. You go to the council meeting — the people you elected, in the city you live in, that owns the pipes.</p></div>
+</div>
+  <p>And here's the thing about a municipal water system: <strong>your city built it. Your neighbors paid for it, through decades of taxes and rates.</strong> It is, in the most literal sense, yours.</p>
+</div></section>
+
+<section><div class="panel">
+<div class="ask" data-correct="2">
+  <p class="q">A city builds and pays for its own water system. Who should get to run it?</p>
+  <div class="opts"><button class="opt" data-i="0"><span class="k">A</span><span>The state</span></button><button class="opt" data-i="1"><span class="k">B</span><span>The surrounding counties</span></button><button class="opt" data-i="2"><span class="k">C</span><span>The city that built it</span></button></div>
+  <div class="resp" data-i="0">The state didn't build it and doesn't pay for it.</div><div class="resp" data-i="1">Hold onto that answer. It is the one that unfortunately won.</div><div class="resp" data-i="2">That is the answer almost everyone gives. It is not what happened.</div>
+  <div class="after"></div>
+</div>
+  <h2>Jackson, Mississippi went further than most cities ever do.</h2>
+  <p>Eighty percent Black. And alongside the ordinary machinery of a city, Jackson built something almost no American city has: a <strong>People's Assembly</strong> — an actual standing structure where residents make decisions together and the city governs alongside them rather than at them.</p>
+  
+  </div></section>
+
+<section><div class="panel">
+  <div class="hinge">
+    <div class="eyebrow">And now the part that isn't hypothetical</div>
+    <p>Then the water failed — and the state arrived to take it, not to fix it.</p>
+  </div>
+  <p>After the 2022 crisis left the city without safe drinking water, the state moved to regionalize the system, shifting control outward toward surrounding counties — smaller, whiter, and not the people who built or use it.</p>
+  <div class="quote">One state can change a law we agreed to as a community.<cite>— Rukia Lumumba, Jackson</cite></div>
+  
+</div></section>
+
+<section><div class="panel">
+  <h2>And it did not stop at the water.</h2>
+  <p>In the same period the legislature passed <strong>House Bill 1020</strong>. It mandated the appointment of special judges and prosecutors by state officials in majority-Black Hinds County, which includes the City of Jackson. It also let Capitol Police — a state force — take effective control of policing in part of the city.</p>
+  <p>Read plainly: State legislators with no connection to Jackson shifted authority over a county's criminal justice system <strong>away from democratically elected judges and prosecutors chosen by Black voters.</strong></p>
+  <p>And it took the money with it. <strong>18% of the tax revenue that should go to the City of Jackson now goes to the state instead</strong> — to fund the new judiciary it imposed.</p>
+  <div class="banner"><p>First you can't drink it. Then you can't decide about it.</p></div>
+</div></section>
+
+<section><div class="panel">
+  <h2>A city that governs by assembly, governed by appointment.</h2>
+  <p>Jackson has one of the most developed models of shared community governance in the country. But thanks to this legal tool some refer to as &ldquo;preemption,&rdquo; it is being run, in significant part, by people its residents did not choose.</p>
+  <p><strong>Both things are true at once. And the second one is not an accident of history — it is the response to the first.</strong></p>
+  <div class="cta"><a href="#widen">This is not only Jackson →</a><button onclick="reset()">← Explore a different county</button></div>
+</div></section>
+</div>
+
+<!-- ================= RECONVERGE ================= -->
+<section id="widen"><div class="panel"><span class="tag">Widen out</span>
+  <div class="eyebrow">All three paths arrive here</div>
+  <h2>The common impact.</h2>
+  <p>Houston's school board. Jackson's water and its courts. The removal of power from Virginia&rsquo;s localities.</p>
+  <p>And St. Louis, where in 2025 the Missouri legislature seized control of the city's police department, handed it to a state-appointed board, and required the city to spend a quarter of its general revenue on a department it no longer controls.</p>
+  <p class="lede"><strong>The last time Missouri did that was 1861, on the eve of the Civil War.</strong></p>
+  <div class="cta"><button onclick="reset()">Explore a different decision in a different county</button><a href="#hist">Go back in time ↓</a></div>
+</div></section>
+
+<section id="hist"><div class="panel">
+  <h2>Journey back a hundred and fifty years and watch it all happen the first time.</h2>
+  <div class="twocol">
+    <div>
+      <h3>What they built</h3>
+      <p>After the Civil War, Black communities across the South did exactly what you just did. They organized. They built schools and hospitals. They elected local officials, passed local rules that made their lives better, cared for each other. In some places they governed outright.</p>
+    </div>
+    <div>
+      <h3>What was taken</h3>
+      <p>Within a decade, white paramilitary coalitions calling themselves “Redeemers” took back the state legislatures — and used them to abolish local governments altogether. They rewrote state constitutions to eliminate Black-led governance.</p>
+      <p><strong>They did not have to beat those communities at the local level. They moved the decision somewhere those communities could not reach.</strong></p>
+    </div>
+  </div>
+  <div class="banner"><p>It was the same plot then as the one today.</p></div>
+  <div class="cta"><a href="history.html">Explore the full 150 years of stolen power →</a></div>
+</div></section>
+
+<section id="back"><div class="panel wide"><span class="tag">Where to now</span>
+  <div class="eyebrow">You see it now</div>
+  <h2>That is how stolen power happens. What it looks like.</h2>
+  <p>The rest of this site is the evidence, the people who live it, and how you can join the fight to win power back — and prevent it from being taken in the first place.</p>
+  <div class="exits">
+    <a class="ex" href="tracker.html"><b>Tracker: see the current attempts to steal power right now</b><span>Every bill we can find that takes power from a city &mdash; searchable by state, by issue, by what is about to move. In one recent session, 42 states introduced more than 650 of them.</span></a>
+    <a class="ex" href="find-your-campaign.html"><b>Get involved: find a fight near you</b><span>A map of where this is happening now, where it already happened, and who is organizing against it. Some need people power. Some need money. Some need one conversation.</span></a>
+    <a class="ex" href="voices.html"><b>Voices: hear it from people it happened to</b><span>An archive of first-hand accounts. Nobody explaining a policy &mdash; people describing their everyday.</span></a>
+    <a class="ex" href="history.html"><b>Timeline: read the whole 150 years</b><span>Ten eras, from Reconstruction to this legislative session. The methods changed. The purpose did not.</span></a>
+  </div>
+  <div class="placesrow">
+    <div class="eyebrow" style="margin-bottom:10px">Or learn more about the stories of these four places:</div>
+    <a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a>
+  </div>
+  <div class="cta"><button onclick="reset()">Explore a different decision in a different county &rarr;</button></div>
+</div></section>
+
+</main>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.16});
+function watch(){document.querySelectorAll('.panel').forEach(function(p){io.observe(p)})}
+watch();
+function go(k){
+  ['A','B','C'].forEach(function(x){document.getElementById('p'+x).classList.toggle('show',x===k)});
+  setTimeout(function(){watch();document.getElementById('p'+k).querySelector('section').scrollIntoView({behavior:'smooth'})},60);
+}
+function reset(){
+  ['A','B','C'].forEach(function(x){document.getElementById('p'+x).classList.remove('show')});
+  if(!document.body.classList.contains('textonly')){
+    document.querySelectorAll('.ask').forEach(function(a){
+      a.classList.remove('done');
+      a.querySelectorAll('.opt').forEach(function(b){b.classList.remove('picked')});
+      a.querySelectorAll('.resp').forEach(function(r){r.classList.remove('show')});
+      var af=a.querySelector('.after'); if(af)af.classList.remove('show');
+    });
+  }
+  document.getElementById('choose').scrollIntoView({behavior:'smooth'});
+}
+var tt=document.getElementById('tt');
+tt.onclick=function(){
+  document.body.classList.toggle('textonly');
+  tt.classList.toggle('on');
+  var on=document.body.classList.contains('textonly');
+  tt.textContent=on?'Full experience':'Text-only';
+  if(on){['A','B','C'].forEach(function(x){document.getElementById('p'+x).classList.add('show')});watch();
+    if(window.revealAllAsks)window.revealAllAsks();}
+};
+var snl=[].slice.call(document.querySelectorAll('#botnav .bnitems a'));
+function snTick(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('rf').style.height=(window.scrollY/h*100)+'%';
+  var best=-1;
+  snl.forEach(function(a,i){
+    var el=document.querySelector(a.getAttribute('href'));
+    if(el&&el.getBoundingClientRect().top<=200)best=i;
+  });
+  snl.forEach(function(a,i){a.classList.toggle('on',i===best)});
+}
+window.addEventListener('scroll',snTick,{passive:true});
+snTick();
+</script>
+<footer class="pcpfoot">
+  <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
+  <div class="fgrid">
+    <div><h4>The site</h4>
+      <a href="how-it-happens.html">How It Happens</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a><a href="find-your-campaign.html">Find your campaign</a></div>
+    <div><h4>Places</h4><a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a></div>
+    <div><h4>Read</h4>
+      <a href="#">From The Roots &mdash; the zine</a><a href="history.html">The preemption timeline</a><a href="#">For journalists</a><a href="#">Sample testimony</a></div>
+    <div><h4>Join</h4>
+      <a href="find-your-campaign.html">Campaigns near you</a><a href="#">Campaign updates</a><a href="#">Partner with us</a><a href="#">Tell us your story</a></div>
+    <div><h4>Advancement Project</h4>
+      <a href="about.html">About this project</a><a href="#">Contact</a><a href="#">Espa&ntilde;ol &mdash; the full site</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="fbase"><div class="cwrap">
+    <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
+    <span>Prototype &middot; August 2026</span>
+  </div></div>
+</footer>
+<script>
+(function(){
+  document.querySelectorAll('.ask').forEach(function(ask){
+    ask.querySelectorAll('.opt').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var i=btn.dataset.i;
+        ask.classList.add('done');
+        ask.querySelectorAll('.opt').forEach(function(x){x.classList.remove('picked')});
+        btn.classList.add('picked');
+        ask.querySelectorAll('.resp').forEach(function(x){x.classList.remove('show')});
+        var r=ask.querySelector('.resp[data-i="'+i+'"]'); if(r)r.classList.add('show');
+        var a=ask.querySelector('.after'); if(a)a.classList.add('show');
+      });
+    });
+  });
+  window.revealAllAsks=function(){
+    document.querySelectorAll('.ask').forEach(function(ask){
+      ask.classList.add('done');
+      var c=ask.dataset.correct;
+      var b=ask.querySelector('.opt[data-i="'+c+'"]'); if(b)b.classList.add('picked');
+      var r=ask.querySelector('.resp[data-i="'+c+'"]'); if(r)r.classList.add('show');
+      var a=ask.querySelector('.after'); if(a)a.classList.add('show');
+    });
+  };
+})();
+</script>
+<script>
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  secs.forEach(function(sec){
+    var panel=sec.querySelector('.panel'); if(!panel)return;
+    if(sec.id==='choose')return;
+    if(panel.querySelector('.exits'))return;
+    var d=document.createElement('div'); d.className='nextstep';
+    var b=document.createElement('button'); b.type='button'; b.innerHTML='Continue &darr;';
+    b.addEventListener('click',function(){
+      var from=secs.indexOf(sec);
+      for(var j=from+1;j<secs.length;j++){
+        if(secs[j].offsetParent!==null){secs[j].scrollIntoView({behavior:'smooth',block:'center'});return;}
+      }
+    });
+    d.appendChild(b); panel.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Tracker — People-Centered Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17140F;--cream:#FDF6E8;--cream2:#F3E8D4;--brick:#D64525;--amber:#F2A33C;--yellow:#FFC845;--green:#4F9B54;--purple:#8B4FA8;--blue:#2E6FD9;--muted:#6B6259}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+.logo{font-family:'Archivo Black';font-size:13px}.logo a{color:var(--amber);text-decoration:none}
+.nlinks{display:flex;gap:18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.nlinks a{text-decoration:none;opacity:.85}.nlinks a:hover{opacity:1;color:var(--yellow)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+header.top{background:var(--blue);color:#fff;border-bottom:4px solid var(--ink);padding:56px 0 44px}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:14px;color:#CFE0FF}
+h1{font-family:'Archivo Black';font-size:clamp(36px,6vw,72px);line-height:.96;letter-spacing:-.025em;margin-bottom:18px}
+.stand{font-family:'Fraunces';font-size:clamp(18px,1.9vw,25px);line-height:1.36;max-width:56ch;margin-bottom:14px}
+.stand b{background:var(--yellow);color:var(--ink);padding:0 5px}
+.small{font-size:14.5px;max-width:72ch;opacity:.95}
+/* controls */
+.controls{background:var(--cream2);border-bottom:3px solid var(--ink);padding:20px 0}
+.crow{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:5px}
+label{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+select,input[type=search]{font-family:inherit;font-size:15px;padding:9px 11px;border:2px solid var(--ink);background:var(--cream);border-radius:2px;min-width:150px}
+input[type=search]{min-width:250px}
+.toggles{display:flex;gap:7px;flex-wrap:wrap}
+.tg{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:700;padding:9px 12px;border:2px solid var(--ink);background:var(--cream);cursor:pointer;border-radius:2px;font-family:inherit}
+.tg.on{background:var(--brick);color:#fff;border-color:var(--brick)}
+.count{margin-left:auto;font-family:'Archivo Black';font-size:15px}
+.count span{color:var(--brick)}
+.clear{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:none;border:0;text-decoration:underline;cursor:pointer;color:var(--muted);font-family:inherit;padding:9px 0}
+/* table */
+.tablewrap{scroll-margin-top:145px;overflow-x:auto;padding:26px 0 40px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;padding:11px 12px;background:var(--ink);color:var(--cream);cursor:pointer;white-space:nowrap}
+th:hover{color:var(--yellow)}
+td{padding:13px 12px;border-bottom:1px solid #E0D5C0;vertical-align:top}
+tr:hover td{background:#FAF2E2}
+.bill{font-family:'Archivo Black';font-size:13px;white-space:nowrap}
+.bill a{color:var(--blue)}
+.st{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:2px;white-space:nowrap;display:inline-block}
+.st.intro{background:#E5DCC9;color:#5B5245}
+.st.engrossed{background:var(--amber);color:#3D2A0B}
+.st.passed{background:var(--brick);color:#fff}
+.st.died{background:#DCE7DC;color:#3C5C3E}
+.iss{font-size:11px;letter-spacing:.04em;font-weight:700;text-transform:uppercase;color:var(--purple)}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:2px;background:var(--ink);color:var(--yellow)}
+.notes{color:#4B443B;font-size:14px;max-width:44ch}
+.ttl{font-weight:500;max-width:30ch}
+.state{font-family:'Archivo Black';font-size:14px}
+.empty{padding:60px 24px;text-align:center;background:var(--cream2);border:3px dashed var(--ink);border-radius:3px;margin:20px 0}
+.empty p{max-width:50ch;margin:0 auto 12px}
+/* notes panel */
+.memo{background:var(--ink);color:var(--cream);padding:44px 0;border-top:4px solid var(--brick)}
+.memo h2{font-family:'Archivo Black';font-size:clamp(24px,3vw,38px);line-height:1.03;margin-bottom:10px;color:var(--yellow)}
+.memo .sub{color:#C9BCA6;font-size:15px;margin-bottom:26px;max-width:70ch}
+.memogrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.mcard{background:#211C18;border-left:4px solid var(--amber);padding:20px}
+.mcard h3{font-family:'Fraunces';font-weight:700;font-size:20px;margin-bottom:9px}
+.mcard p{font-size:14.5px;color:#D6CBB8;margin-bottom:9px}
+.mcard code{background:#2F2823;padding:1px 5px;border-radius:2px;font-size:13px;color:var(--yellow)}
+.mcard.big{grid-column:1/-1;border-left-color:var(--brick)}
+footer{padding:36px 0 70px;text-align:center;color:var(--muted);font-size:13.5px}
+footer p{max-width:74ch;margin:0 auto}
+.exp{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.exp button{font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;padding:11px 16px;border:2px solid #fff;background:transparent;color:#fff;cursor:pointer;border-radius:2px;font-family:inherit}
+.exp button:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+@media(max-width:900px){.memogrid{grid-template-columns:1fr}th{position:static}}
+
+/* ===== SHARED CHROME (nav + footer) ===== */
+.pcpnav{position:sticky;top:0;z-index:90;background:#17140F;color:#FDF6E8;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif}
+.cwrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.pcpnav .cwrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;max-width:1440px}
+.pcplogo{font-family:'Archivo Black',Impact,sans-serif;font-size:15px;letter-spacing:-.01em;text-decoration:none;color:#FDF6E8;white-space:nowrap}
+.pcplogo em{font-style:normal;color:#F2A33C}
+.pcplinks{display:flex;gap:24px;font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.pcplinks a{text-decoration:none;opacity:.82;color:#FDF6E8;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.pcplinks a:hover{opacity:1;color:#FFC845}
+.pcplinks a.on{opacity:1;color:#F2A33C;border-bottom-color:#F2A33C}
+.pcpcta{background:#D64525;color:#fff;padding:12px 18px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap}
+.pcpcta:hover{background:#FFC845;color:#17140F}
+@media(max-width:1180px){.pcplogo em{display:none}}
+@media(max-width:1120px){.pcplinks{gap:13px;font-size:11px;letter-spacing:.07em}}
+@media(max-width:860px){.pcpnav .cwrap{height:auto;padding:9px 16px;flex-wrap:wrap;row-gap:8px}
+ .pcplinks{order:3;width:100%;gap:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px}}
+
+/* ===== SUBNAV ===== */
+.subnav{position:sticky;z-index:80;background:#F3E8D4;color:#17140F;border-bottom:3px solid #17140F;font-family:'DM Sans',system-ui,sans-serif;top:72px}
+.subnav .cwrap{display:flex;align-items:center;gap:10px;height:60px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.subnav .slab2{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55;margin-right:6px;white-space:nowrap}
+.snl{display:flex;gap:6px;align-items:center;flex:1}
+.snl a,.snl button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snl a:hover,.snl button:hover{border-color:#17140F;background:#FDF6E8}
+.snl a.on,.snl button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+.snr{display:flex;gap:6px;margin-left:auto}
+.snr button,.snr a{font:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;background:transparent;border:2px solid rgba(23,20,15,.22);color:#17140F;padding:7px 12px;border-radius:2px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.snr button:hover,.snr a:hover{border-color:#17140F;background:#FDF6E8}
+.snr button.on{background:#17140F;color:#FDF6E8;border-color:#17140F}
+main section,main .panel{scroll-margin-top:145px}
+@media(max-width:860px){.subnav{top:auto;position:sticky;top:0}.subnav .slab2{display:none}}
+
+/* ===== FOOTER ===== */
+.pcpfoot{background:#17140F;color:#FDF6E8;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.55}
+.fclose{background:#D64525;color:#fff;border-bottom:4px solid #17140F}
+.fclose .cwrap{padding:64px 28px;text-align:center}
+.fclose p{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(28px,5vw,64px);line-height:1;letter-spacing:-.02em;max-width:20ch;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding:52px 28px;max-width:1240px;margin:0 auto}
+.fgrid h4{font-family:'DM Sans';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F2A33C;margin:0 0 11px}
+.fgrid a{display:block;opacity:.8;text-decoration:none;color:#FDF6E8;margin-bottom:7px;font-size:14px}
+.fgrid a:hover{opacity:1;color:#FFC845}
+.fbase{border-top:1px solid rgba(253,246,232,.2)}
+.fbase .cwrap{padding:20px 28px;font-size:12px;opacity:.6;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:1080px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.fgrid{grid-template-columns:1fr 1fr}}
+
+/* ===== relocated from the scrollytell ===== */
+.mv{border-top:4px solid var(--ink);padding:46px 28px;max-width:1240px;margin:0 auto}
+.mv h2{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(24px,3.4vw,42px);line-height:1.02;letter-spacing:-.02em;margin-bottom:18px;max-width:24ch}
+.mv p{margin-bottom:14px;max-width:70ch}
+.mv .eyebrow{margin-bottom:12px;opacity:1;color:#D64525}
+.mv .banner{border-left:8px solid #D64525;padding:10px 0 10px 20px;font-family:'Fraunces',Georgia,serif;font-size:clamp(20px,2.2vw,27px);line-height:1.3;margin:22px 0}
+.mv .banner p{margin:0;font-family:inherit}
+.mv .statelist{display:grid;gap:10px;margin:20px 0}
+.mv .statelist div{border-left:4px solid rgba(23,20,15,.3);padding-left:14px;font-size:16px}
+.mv .statelist b{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:13px;letter-spacing:.06em}
+.mv .wall{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.mv .wall>div{border:3px solid currentColor;border-radius:3px;padding:20px}
+.mv .wall h3{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:15px;letter-spacing:.09em;margin-bottom:10px}
+.mv .wall .a{background:rgba(23,20,15,.05)}
+.mv .wall .b{background:rgba(214,69,37,.09)}
+.mv .quote{border-left:6px solid #4F9B54;padding:5px 0 5px 17px;margin:16px 0;font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.38}
+.mv .quote cite{display:block;margin-top:8px;font-family:'DM Sans';font-style:normal;font-size:13px;opacity:.7}
+.mv .hl{font-style:normal;background:rgba(255,200,69,.55);padding:0 3px}
+.mv .flag{background:#FFF3D6;border-left:5px solid #F2A33C;color:#6a5320;padding:13px 16px;font-size:14.5px;margin-top:16px}
+.mv .lede{font-family:'Fraunces',Georgia,serif;font-size:clamp(19px,2vw,24px);line-height:1.36}
+@media(max-width:820px){.mv .wall{grid-template-columns:1fr}}
+
+.lvl{display:inline-block;margin-left:6px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;background:var(--purple,#8B4FA8);color:#fff;padding:2px 6px;border-radius:2px;vertical-align:1px}
+.relchip{font:inherit;cursor:pointer;background:var(--brick);color:#fff;border:none}
+.relchip:hover{background:var(--ink)}
+.relbar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:#FFF3D6;border:3px solid var(--ink);border-radius:3px;padding:13px 16px;margin:18px 0 0}
+.relbar .rbmark{font-family:'Archivo Black',Impact,sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:6px 10px;border-radius:2px;white-space:nowrap}
+.relbar p{margin:0;font-size:15px;color:#6a5320;flex:1;min-width:240px}
+.relbar b{color:var(--ink)}
+.relbar button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:transparent;border:2px solid var(--ink);padding:8px 13px;border-radius:2px;cursor:pointer}
+.relbar button:hover{background:var(--ink);color:var(--cream)}
+
+/* ===== overview / patterns ===== */
+.ov{background:var(--cream2);border-bottom:4px solid var(--ink);scroll-margin-top:70px}
+.ov .wrap{padding:44px 28px}
+.ov .eyebrow{color:var(--brick);margin-bottom:12px}
+.ov h2{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(24px,3.3vw,40px);line-height:1.02;letter-spacing:-.02em;margin-bottom:10px;max-width:22ch}
+.ov .ovlede{font-size:16.5px;max-width:76ch;margin-bottom:26px;opacity:.85}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:30px}
+.kpi{background:var(--cream);border:3px solid var(--ink);border-radius:3px;padding:17px 18px}
+.kpi .kv{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:clamp(34px,4.4vw,50px);line-height:1;letter-spacing:-.02em}
+.kpi .kl{font-size:13.5px;line-height:1.4;margin-top:8px;opacity:.8}
+.ovgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:start}
+.chart{background:var(--cream);border:3px solid var(--ink);border-radius:3px;padding:20px}
+.chart h3{font-size:14px;letter-spacing:.02em;margin-bottom:3px}
+.chart .csub{font-size:12.5px;opacity:.62;margin-bottom:16px}
+.brow{display:grid;grid-template-columns:132px 1fr 26px;gap:10px;align-items:center;margin-bottom:9px}
+.brow .bl{font-size:12.5px;text-align:right;line-height:1.25;opacity:.85}
+.btrack{height:18px;position:relative;border-left:1px solid rgba(23,20,15,.3)}
+.bfill{height:18px;background:#D64525;border-radius:0 4px 4px 0;position:relative;transition:width .5s ease;min-width:3px}
+.bfill:hover{background:#17140F}
+.brow .bv{font-family:'DM Sans';font-weight:700;font-size:13.5px;opacity:.85}
+.baseline{border-left:1px solid rgba(23,20,15,.28);grid-column:2;height:100%}
+.findings{display:grid;gap:14px}
+.find{border-left:7px solid var(--brick);padding:2px 0 2px 17px}
+.find h4{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;font-size:17.5px;line-height:1.15;letter-spacing:-.01em;margin-bottom:6px}
+.find p{font-size:15px;line-height:1.5;opacity:.86;margin:0}
+.find p em{background:rgba(255,200,69,.6);font-style:normal;padding:0 3px}
+.find button{font:inherit;font-size:12px;font-weight:700;background:none;border:none;padding:0;margin-top:7px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:var(--brick)}
+@media(max-width:980px){.kpis{grid-template-columns:1fr 1fr}.ovgrid{grid-template-columns:1fr}}
+@media(max-width:520px){.brow{grid-template-columns:104px 1fr 24px}}
+.mcard .did{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#4F9B54;margin-top:12px}
+.mown{margin-top:26px;border-top:2px solid rgba(253,246,232,.22);padding-top:22px}
+.mown h3{font-family:'Archivo Black',Impact,sans-serif;font-size:16px;color:#F2A33C;margin-bottom:8px}
+.mown p{max-width:78ch;opacity:.8;font-size:15px}
+.ovhead{display:flex;gap:20px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.ovhead h2{margin-bottom:0}
+.skipbtn{flex:none;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border:3px solid var(--ink);padding:12px 17px;border-radius:2px;white-space:nowrap;margin-top:4px}
+.skipbtn:hover{background:var(--ink);color:var(--cream)}
+.modal{position:fixed;inset:0;z-index:200;background:rgba(23,20,15,.72);display:flex;align-items:center;justify-content:center;padding:24px}
+.modal[hidden]{display:none}
+.mbox{background:var(--cream);border:4px solid var(--ink);border-radius:4px;max-width:64ch;padding:34px 36px;position:relative;max-height:86vh;overflow:auto}
+.mbox h2{font-family:'Archivo Black',Impact,sans-serif;font-size:clamp(22px,3vw,32px);line-height:1.05;margin-bottom:16px}
+.mbox p{font-size:16.5px;line-height:1.55;margin-bottom:14px}
+.mclose{position:absolute;top:12px;right:14px;background:none;border:none;font-size:30px;line-height:1;cursor:pointer;color:var(--ink);padding:4px 8px}
+.mclose:hover{color:var(--brick)}
+@media(max-width:700px){.mbox{padding:26px 22px}}
+</style>
+</head>
+<body>
+<nav class="pcpnav"><div class="cwrap">
+  <a class="pcplogo" href="pcp-home.html">ADVANCEMENT PROJECT <em>&middot; PEOPLE-CENTERED POWER</em></a>
+  <div class="pcplinks"><a href="how-it-happens.html">How It Happens</a><a href="place-houston.html">Places</a><a href="history.html">Timeline</a><a href="tracker.html" class="on">Tracker</a><a href="voices.html">Voices</a></div>
+  <a class="pcpcta" href="find-your-campaign.html">Find your campaign</a>
+</div></nav>
+
+<header class="top"><div class="wrap">
+  <div class="eyebrow">Living data</div>
+  <h1>Every bill we can find that takes power from a city.</h1>
+  <p class="stand">This is the <b>preemption</b> tracker. Here we use the legal word, because this is the page where you need it — for a hearing, a filing, a story, a testimony.</p>
+  
+  
+  <div class="exp">
+    <button onclick="dl()">Download this view (CSV)</button>
+    <button onclick="alert('Embed code would be provided here.')">Embed this tracker</button>
+    <button onclick="openModal()">What this measures</button>
+    <button onclick="alert('Submission form would open here.')">Tell us about a bill we&rsquo;re missing</button>
+  </div>
+</div></header>
+
+<section class="ov"><div class="wrap">
+  <div class="eyebrow">What these 32 bills already show</div>
+  <div class="ovhead"><h2>Four patterns you can see without reading a single bill.</h2><a class="skipbtn" href="#thetable">Skip to the tracker &darr;</a></div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kv" id="k1">32</div><div class="kl">bills we are documenting this session</div></div>
+    <div class="kpi"><div class="kv" id="k2">3</div><div class="kl">have passed &mdash; 24 are still moving, 5 died in committee</div></div>
+    <div class="kpi"><div class="kv" id="k3">13</div><div class="kl">states, plus one bill in the U.S. Congress</div></div>
+    <div class="kpi"><div class="kv" id="k4">6</div><div class="kl">carry a punishment for local officials who defy them</div></div>
+  </div>
+
+  <div class="ovgrid">
+    <div class="chart">
+      <h3>What they are about</h3>
+      <div class="csub">Bills by issue area &middot; all 32</div>
+      <div id="bars"></div>
+    </div>
+
+    <div class="findings">
+      <div class="find">
+        <h4>Half the docket is immigration and voting.</h4>
+        <p><em>17 of 32 bills</em> are about immigration (9) or voting and elections (8). Both are about who counts as part of a community and who gets to decide for it. The other issue areas are real, but this is where the volume is.</p>
+      </div>
+      <div class="find">
+        <h4>The punishment is the newer part, and it is spreading.</h4>
+        <p>Six bills do not just block a local law &mdash; they go after the officials. Three carry <em>criminal penalties</em>, two withhold funding, and two create <em>private enforcement</em>: any citizen can sue to enforce the preemption. That last one is the SB 8 bounty mechanism migrating into preemption law, and almost nobody is counting it.</p>
+        <button onclick="showPunitive()">Show me those six &rarr;</button>
+      </div>
+      <div class="find">
+        <h4>A takeover is not one bill. It is a maintenance schedule.</h4>
+        <p>Missouri&rsquo;s seizure of the St. Louis police department is <em>three bills across two sessions</em> &mdash; HB 495 to take it, then HB 2884 and HB 3066 to keep it running. Count only the headline bill and you miss two thirds of the work.</p>
+        <button onclick="byRel('St. Louis takeover')">Show me that campaign &rarr;</button>
+      </div>
+      <div class="find">
+        <h4>A bill dying is not the same as you being safe.</h4>
+        <p>Five of these died in committee. That is exactly why this tracker counts <em>attempts</em>. Model language that fails in one state in one session reappears in four more the next, usually word for word.</p>
+        <button onclick="showDead()">Show me the five &rarr;</button>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="controls"><div class="wrap">
+  <div class="crow">
+    <div class="field"><label for="q">Search</label><input type="search" id="q" placeholder="Bill number, title, keyword…"></div>
+    <div class="field"><label for="fs">State</label><select id="fs"><option value="">All states</option></select></div>
+    <div class="field"><label for="fi">Issue</label><select id="fi"><option value="">All issues</option></select></div>
+    <div class="field"><label for="fl">Level</label><select id="fl"><option value="">State &amp; federal</option><option>State</option><option>Federal</option></select></div>
+    <div class="field"><label for="fy">Session</label><select id="fy"><option value="">Any session</option></select></div>
+    <div class="field"><label for="ft">Status</label><select id="ft"><option value="">Any status</option><option>Introduced</option><option>Engrossed</option><option>Passed</option><option>Died in committee</option></select></div>
+    <div class="field"><label>Punishes local officials</label>
+      <div class="toggles">
+        <button class="tg" id="anytag" onclick="toggleAny()">Any</button>
+        <button class="tg" data-tag="Funding withheld">Funding</button>
+        <button class="tg" data-tag="Criminal penalty">Criminal</button>
+        <button class="tg" data-tag="Private enforcement">Citizen suits</button>
+      </div>
+    </div>
+    <button class="clear" onclick="clearAll()">Clear all</button>
+    <div class="count"><span id="n">0</span> bills</div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="relbar" id="relbar" style="display:none">
+  <span class="rbmark">Campaign view</span>
+  <p>Showing every bill in <b id="relname"></b>. A takeover is rarely one bill &mdash; it is a first bill and then the bills that keep it running.</p>
+  <button onclick="clearRel()">Show all bills &times;</button>
+</div></div>
+
+<div class="wrap tablewrap" id="thetable">
+  <table id="t">
+    <thead><tr>
+      <th data-k="bill">Bill</th><th data-k="state">State</th><th data-k="filed">Filed</th>
+      <th data-k="title">Title</th><th data-k="issue">Issue</th><th data-k="status">Status</th><th>What it does</th>
+    </tr></thead>
+    <tbody id="tb"></tbody>
+  </table>
+  <div class="empty" id="empty" style="display:none">
+    <p><strong>Nothing matches that combination yet.</strong></p>
+    <p>That may mean the fight hasn't reached this state — or that we haven't found it. If you know of a bill we're missing, tell us.</p>
+    <button class="tg" onclick="clearAll()">Clear filters</button>
+  </div>
+</div>
+
+
+
+<script>
+var DATA=[
+{bill:"HB 455",state:"FL",filed:"2025-11-18",title:"Protection of Historic Monuments and Memorials",issue:"Racist history",status:"Died in committee",notes:"Preempts removal of racist historical markers and monuments.",tags:[]},
+{bill:"HB 479 / SB 718",state:"FL",filed:"2025-11-19",title:"Land and Water Management",issue:"Environment",status:"Introduced",notes:"Prohibits counties and municipalities from adopting laws regulating adjacent upland activities outside certain wetland buffers.",tags:[]},
+{bill:"HB 991 / SB 1334",state:"FL",filed:"2026-01-05",title:"Elections",issue:"Elections",status:"Engrossed",notes:"Another attempt to remove voters from rolls; tries to verify voter citizenship — voters registered as “unverified” if status can't be verified.",tags:[]},
+{bill:"HB 985",state:"FL",filed:"2026-01-05",title:"Voter Registration and Identification",issue:"Voting",status:"Died in committee",notes:"Documentary proof of citizenship-type poll tax requiring “certain electors” to show Florida ID before voting.",tags:[]},
+{bill:"SB 1444 / HB 1227",state:"FL",filed:"2026-01-08",title:"Preemption to the State",issue:"Blanket preemption",status:"Died in committee",notes:"Preemption “of all matters relating to the regulation of” religious gatherings, building permits, occupancy.",tags:[]},
+{bill:"SB 588 / HB 1055",state:"FL",filed:"2026-01-13",title:"Local Government Enforcement Actions",issue:"Blanket preemption",status:"Died in committee",notes:"Preempts local enforcement actions toward “arbitrary or unreasonable” actions.",tags:[]},
+{bill:"SB 718 / HB 479",state:"FL",filed:"2026-01-13",title:"Water Management",issue:"Environment",status:"Introduced",notes:"Prohibits counties and municipalities from adopting laws related to water quality or quantity, pollution control, or pollutant discharge prevention.",tags:[]},
+{bill:"SB 902 / HB 733",state:"FL",filed:"2026-01-13",title:"Department of Health",issue:"Health",status:"Died in committee",notes:"Redefines “low-income,” deletes definition of “medically underserved area”; preempts regulation of marijuana cultivation, processing, delivery.",tags:[]},
+{bill:"HF 2401",state:"IA",filed:"2026-01-14",title:"State law enforcement cooperation with federal ICE",issue:"Immigration",status:"Introduced",notes:"Requires all localities to enter 287(g) agreements — forced cooperation with ICE — and honor detainer requests.",tags:[]},
+{bill:"HF 2165",state:"IA",filed:"2026-01-26",title:"Casting of ballots by absent voters",issue:"Voting",status:"Introduced",notes:"Moves up the deadline for returning absentee ballots to 5pm the day before Election Day.",tags:[]},
+{bill:"SB 2203",state:"IA",filed:"2026-02-05",title:"Verification of US citizenship of voters",issue:"Voting",status:"Engrossed",notes:"Secretary of State required to verify citizenship of all registered voters annually, and newly registered voters monthly.",tags:[]},
+{bill:"HB 2357",state:"IL",filed:"2025-01-30",title:"Public Demonstrations",issue:"Protest",status:"Introduced",notes:"Protest bill regarding blocking roadways more than 5 minutes. Preempts home rule.",tags:[]},
+{bill:"SB 145",state:"IN",filed:"2026-01-05",title:"Law enforcement services in Indianapolis downtown",issue:"State takeover: Police",status:"Introduced",notes:"Would give the governor full authority to appoint a new police board in Indianapolis to control or limit police accountability.",tags:[]},
+{bill:"HB 1166",state:"IN",filed:"2026-01-05",title:"Elections",issue:"Voting",status:"Introduced",notes:"Prohibits early in-person voting, vote centers, mass mail-in voting, ballot collecting, drop boxes, electronic voting; documentary proof of citizenship.",tags:[]},
+{bill:"HB 1416",state:"IN",filed:"2026-01-08",title:"Preemption of local regulation",issue:"Blanket preemption",status:"Introduced",notes:"Unless expressly authorized by another statute, a municipality or county may not adopt, enforce, or maintain ordinances regulating conduct in whole fields of law.",tags:[]},
+{bill:"SB 285",state:"IN",filed:"2026-01-12",title:"Housing matters",issue:"Housing",status:"Passed",notes:"Criminalizes homelessness and unhoused people by limiting where they can sleep. Preemption clause included.",tags:["Criminal penalty"]},
+{bill:"SB 86",state:"KY",filed:"2026-01-13",title:"State and local collaboration with federal immigration",issue:"Immigration",status:"Introduced",notes:"Defines types of 287(g) agreements — forced cooperation with ICE — and requires participation.",tags:[]},
+{bill:"HB 361",state:"KY",filed:"2026-01-13",title:"Sanctuary policies",issue:"Immigration",status:"Introduced",notes:"Prohibits localities from adopting sanctuary policies; requires immigration enforcement cooperation. Locality loses road aid funds if it violates the law.",tags:["Funding withheld"]},
+{bill:"SB 3549",state:"MN",filed:"2026-02-17",title:"State preemption of local units regulating firearms (repeal)",issue:"Home rule powers",status:"Introduced",notes:"Preempts home rule and charter authority on firearm regulation except regarding discharge or regulations identical to state law.",tags:[]},
+{bill:"HB 495",state:"MO",filed:"2025-01-08",title:"Modifies provisions relating to public safety",issue:"State takeover: Police",status:"Passed",notes:"Allowed Missouri to take over the St. Louis Metropolitan Police Department, removing local control.",tags:[],rel:"St. Louis takeover"},
+{bill:"SB 896",state:"MO",filed:"2026-01-07",title:"New provisions relating to elections",issue:"Voting",status:"Introduced",notes:"Prohibits election funding from any source other than another government entity; criminal penalty; private enforcement.",tags:["Criminal penalty","Private enforcement"]},
+{bill:"HB 2884",state:"MO",filed:"2026-01-08",title:"Appointments to St. Louis Police Retirement System trustees",issue:"State takeover: Police",status:"Introduced",notes:"Continuation of MO HB 495.",tags:[],rel:"St. Louis takeover"},
+{bill:"HB 3066",state:"MO",filed:"2026-01-21",title:"St. Louis Board of Police Commissioners",issue:"State takeover: Police",status:"Introduced",notes:"Continuation of MO HB 495.",tags:[],rel:"St. Louis takeover"},
+{bill:"HB 538",state:"MS",filed:"2026-01-12",title:"Sanctuary policies; prohibitions",issue:"Immigration",status:"Engrossed",notes:"Broadens the state's sanctuary ban.",tags:[]},
+{bill:"SB 172",state:"OH",filed:"2025-04-08",title:"Persons unlawfully present not privileged from arrest",issue:"Immigration",status:"Engrossed",notes:"Allows warrantless arrests of undocumented people, preempting local court rules.",tags:[]},
+{bill:"SB 1759",state:"OK",filed:"2026-02-02",title:"Elections; prohibiting certain voting methods",issue:"Voting",status:"Introduced",notes:"Prohibits the state and any political subdivision from enacting ranked choice voting; allows private enforcement.",tags:["Private enforcement"]},
+{bill:"H 3030",state:"SC",filed:"2024-12-05",title:"Undocumented individuals",issue:"Immigration",status:"Introduced",notes:"Requires 287(g) participation — forced cooperation with ICE — with RICO charges if violated.",tags:["Criminal penalty"]},
+{bill:"HB 4205",state:"TX",filed:"2025-03-10",title:"Compensation and employment benefits for law enforcement",issue:"Police funding",status:"Passed",notes:"If a county increases compensation or benefits for a class of officers, all officers in that class must receive the same increase. Preempts contrary local policy.",tags:[]},
+{bill:"SB 685 / HB 3881",state:"U.S. Congress",filed:"2025-02-24",title:"Stop Dangerous Sanctuary Cities Act",issue:"Immigration",status:"Introduced",notes:"Preempts state and local policies that would otherwise prohibit local cooperation with federal immigration work.",tags:[]},
+{bill:"HB 4059",state:"WV",filed:"2026-01-14",title:"Hospital and county reporting on costs of undocumented immigrants",issue:"Immigration",status:"Introduced",notes:"Quarterly reports on money spent on undocumented immigrants — housing, food, education.",tags:[]},
+{bill:"HB 4596",state:"WV",filed:"2026-01-20",title:"Prohibiting subdivisions from restricting cooperation with ICE",issue:"Immigration",status:"Introduced",notes:"Prohibits adoption of policies that restrict immigration enforcement. Locality loses state funding.",tags:["Funding withheld"]},
+{bill:"HB 5275",state:"WV",filed:"2026-02-05",title:"Circumstances when a qualified voter may vote absentee",issue:"Voting",status:"Introduced",notes:"Severely restricts absentee voting for previously qualified groups, including people whose work doesn't allow time to vote in person and college students.",tags:[]}
+];
+var active={q:"",state:"",issue:"",status:"",level:"",session:"",rel:"",anyTag:false,tags:[]},sortK="filed",sortDir=-1;
+DATA.forEach(function(d){
+  d.level = (d.state==='U.S. Congress') ? 'Federal' : 'State';
+  d.session = d.filed.slice(0,4);
+});
+function uniq(k){return [...new Set(DATA.map(function(d){return d[k]}))].sort()}
+uniq('state').forEach(function(v){document.getElementById('fs').innerHTML+='<option>'+v+'</option>'});
+uniq('issue').forEach(function(v){document.getElementById('fi').innerHTML+='<option>'+v+'</option>'});
+uniq('session').sort().reverse().forEach(function(v){document.getElementById('fy').innerHTML+='<option>'+v+'</option>'});
+function fmt(d){var p=d.split('-');return p[1]+'/'+p[2]+'/'+p[0]}
+function stClass(s){return s.toLowerCase().indexOf('died')>-1?'died':s.toLowerCase()}
+function pass(d){
+  if(active.state&&d.state!==active.state)return false;
+  if(active.issue&&d.issue!==active.issue)return false;
+  if(active.status&&d.status!==active.status)return false;
+  if(active.level&&d.level!==active.level)return false;
+  if(active.session&&d.session!==active.session)return false;
+  if(active.rel&&d.rel!==active.rel)return false;
+  if(active.anyTag&&!d.tags.length)return false;
+  if(active.tags.length&&!active.tags.every(function(t){return d.tags.indexOf(t)>-1}))return false;
+  if(active.q){var s=(d.bill+' '+d.title+' '+d.notes+' '+d.issue+' '+d.state).toLowerCase();if(s.indexOf(active.q.toLowerCase())<0)return false}
+  return true;
+}
+function render(){
+  var rows=DATA.filter(pass).sort(function(a,b){
+    var x=a[sortK],y=b[sortK];return x<y?-sortDir:x>y?sortDir:0});
+  document.getElementById('n').textContent=rows.length;
+  document.getElementById('empty').style.display=rows.length?'none':'block';
+  document.getElementById('t').style.display=rows.length?'table':'none';
+  document.getElementById('tb').innerHTML=rows.map(function(d){
+    return '<tr>'+
+    '<td class="bill"><a href="#" onclick="return false">'+d.bill+'</a></td>'+
+    '<td class="state">'+d.state+(d.level==='Federal'?'<span class="lvl">Federal</span>':'')+'</td>'+
+    '<td style="white-space:nowrap">'+fmt(d.filed)+'</td>'+
+    '<td class="ttl">'+d.title+(d.rel?'<div class="tags"><button class="tag relchip" onclick="byRel(\''+d.rel+'\')" title="Show every bill in this campaign">&#8618; '+d.rel+'</button></div>':'')+'</td>'+
+    '<td class="iss">'+d.issue+'</td>'+
+    '<td><span class="st '+stClass(d.status)+'">'+d.status+'</span></td>'+
+    '<td class="notes">'+d.notes+(d.tags.length?'<div class="tags">'+d.tags.map(function(t){return '<span class="tag">'+t+'</span>'}).join('')+'</div>':'')+'</td>'+
+    '</tr>'}).join('');
+}
+document.getElementById('q').oninput=function(e){active.q=e.target.value;render()};
+document.getElementById('fs').onchange=function(e){active.state=e.target.value;render()};
+document.getElementById('fi').onchange=function(e){active.issue=e.target.value;render()};
+document.getElementById('ft').onchange=function(e){active.status=e.target.value;render()};
+document.getElementById('fl').onchange=function(e){active.level=e.target.value;render()};
+document.getElementById('fy').onchange=function(e){active.session=e.target.value;render()};
+document.querySelectorAll('.tg[data-tag]').forEach(function(b){
+  b.onclick=function(){
+    var t=b.dataset.tag,i=active.tags.indexOf(t);
+    if(i>-1){active.tags.splice(i,1);b.classList.remove('on')}else{active.tags.push(t);b.classList.add('on')}
+    render();
+  }});
+document.querySelectorAll('th[data-k]').forEach(function(th){
+  th.onclick=function(){var k=th.dataset.k;if(sortK===k)sortDir*=-1;else{sortK=k;sortDir=1}render()}});
+function clearAll(){
+  active={q:"",state:"",issue:"",status:"",level:"",session:"",rel:"",anyTag:false,tags:[]};
+  document.getElementById('q').value='';['fs','fi','ft','fl','fy'].forEach(function(i){document.getElementById(i).value=''});
+  var rb=document.getElementById('relbar'); if(rb)rb.style.display='none';
+  document.querySelectorAll('.tg').forEach(function(b){b.classList.remove('on')});
+  render();
+}
+function toggleAny(){
+  active.anyTag=!active.anyTag;
+  document.getElementById('anytag').classList.toggle('on',active.anyTag);
+  render();
+}
+function byRel(r){
+  active.rel=r; render();
+  var rb=document.getElementById('relbar');
+  rb.style.display='flex';
+  document.getElementById('relname').textContent=r;
+  document.querySelector('.controls').scrollIntoView({behavior:'smooth'});
+}
+function clearRel(){active.rel='';document.getElementById('relbar').style.display='none';render()}
+function dl(){
+  var rows=DATA.filter(pass);
+  var csv='Bill,Level,State,Session,Filed,Title,Issue,Status,Enforcement,Campaign,Notes\n'+rows.map(function(d){
+    return [d.bill,d.level,d.state,d.session,d.filed,d.title,d.issue,d.status,d.tags.join('; '),d.rel||'',d.notes].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(',')}).join('\n');
+  var a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download='preemption-tracker.csv';a.click();
+}
+DATA.forEach(function(d){
+  d.level = (d.state==='U.S. Congress') ? 'Federal' : 'State';
+  d.session = d.filed.slice(0,4);
+});
+
+/* ---- overview: computed from DATA, redrawn when it changes ---- */
+function bucket(i){
+  if(i==='Voting'||i==='Elections')return 'Voting & elections';
+  if(i.indexOf('State takeover')===0||i==='Police funding')return 'Police & takeovers';
+  if(i==='Blanket preemption'||i==='Home rule powers')return 'Blanket preemption';
+  return i;
+}
+function drawOverview(){
+  var n=DATA.length;
+  var passed=DATA.filter(function(d){return d.status==='Passed'}).length;
+  var dead=DATA.filter(function(d){return d.status==='Died in committee'}).length;
+  var moving=n-passed-dead;
+  var states={},fed=0;
+  DATA.forEach(function(d){ d.level==='Federal'?fed++:states[d.state]=1; });
+  var punitive=DATA.filter(function(d){return d.tags.length}).length;
+  document.getElementById('k1').textContent=n;
+  document.getElementById('k2').textContent=passed;
+  document.getElementById('k2').nextElementSibling.innerHTML='have passed &mdash; '+moving+' are still moving, '+dead+' died in committee';
+  document.getElementById('k3').textContent=Object.keys(states).length;
+  document.getElementById('k4').textContent=punitive;
+
+  var counts={};
+  DATA.forEach(function(d){var b=bucket(d.issue);counts[b]=(counts[b]||0)+1});
+  var list=Object.keys(counts).map(function(k){return [k,counts[k]]}).sort(function(a,b){return b[1]-a[1]});
+  var max=list[0][1];
+  document.getElementById('bars').innerHTML=list.map(function(p){
+    var pct=Math.round(p[1]/max*100);
+    return '<div class="brow"><div class="bl">'+p[0]+'</div>'+
+      '<div class="btrack"><div class="bfill" style="width:'+pct+'%" title="'+p[0]+': '+p[1]+' bills"></div></div>'+
+      '<div class="bv">'+p[1]+'</div></div>';
+  }).join('');
+}
+function showPunitive(){
+  clearAll();
+  active.anyTag=true;
+  document.getElementById('anytag').classList.add('on');
+  render();
+  document.querySelector('.controls').scrollIntoView({behavior:'smooth'});
+}
+function showDead(){
+  clearAll();
+  active.status='Died in committee';
+  document.getElementById('ft').value='Died in committee';
+  render();
+  document.querySelector('.controls').scrollIntoView({behavior:'smooth'});
+}
+drawOverview();
+
+render();
+</script>
+<footer class="pcpfoot">
+  <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
+  <div class="fgrid">
+    <div><h4>The site</h4>
+      <a href="how-it-happens.html">How It Happens</a><a href="history.html">Timeline</a><a href="tracker.html">Tracker</a><a href="voices.html">Voices</a><a href="find-your-campaign.html">Find your campaign</a></div>
+    <div><h4>Places</h4><a href="place-houston.html">Houston</a><a href="place-jackson.html">Jackson</a><a href="place-virginia.html">Virginia</a><a href="place-stlouis.html">St. Louis</a></div>
+    <div><h4>Read</h4>
+      <a href="#">From The Roots &mdash; the zine</a><a href="history.html">The preemption timeline</a><a href="#">For journalists</a><a href="#">Sample testimony</a></div>
+    <div><h4>Join</h4>
+      <a href="find-your-campaign.html">Campaigns near you</a><a href="#">Campaign updates</a><a href="#">Partner with us</a><a href="#">Tell us your story</a></div>
+    <div><h4>Advancement Project</h4>
+      <a href="about.html">About this project</a><a href="#">Contact</a><a href="#">Espa&ntilde;ol &mdash; the full site</a><a href="#">Accessibility</a></div>
+  </div>
+  <div class="fbase"><div class="cwrap">
+    <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
+    <span>Prototype &middot; August 2026</span>
+  </div></div>
+</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+    <button class="mclose" onclick="closeModal()" aria-label="Close">&times;</button>
+    <h2 id="mtitle">What this measures</h2>
+    <p>A bill enters this tracker when it is <strong>introduced</strong> &mdash; which means the tracker counts <strong>attempts</strong>, not just successes.</p>
+    <p>That is deliberate. A bill that dies in one state in one session is a bill that gets introduced in four more states next session, usually with the same language. Watching what is <em>tried</em> is how you see the strategy before it lands on you.</p>
+    <p>We focus on states where we have partners on the ground. The Local Solutions Support Center tracks this nationally and we work alongside them. What we add is the racial-control analysis and the communities on the receiving end.</p>
+  </div>
+</div>
+<script>
+function openModal(){var m=document.getElementById('modal');m.hidden=false;document.body.style.overflow='hidden';m.querySelector('.mclose').focus();}
+function closeModal(){document.getElementById('modal').hidden=true;document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+</script>
+</body>
+</html>
