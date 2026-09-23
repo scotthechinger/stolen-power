@@ -34,6 +34,13 @@ h1{font-family:'Archivo Black';font-size:clamp(42px,7.6vw,92px);line-height:.94;
 .era-name{font-family:'Archivo Black';font-size:clamp(19px,2.5vw,30px);letter-spacing:-.01em;line-height:1.05}
 .era-dates{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dust);font-weight:700}
 /* entry */
+.tlfigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;max-width:66ch;margin:16px 0 14px}
+.tlfigs figure{margin:0}
+.tlfigs img{display:block;width:100%;height:220px;object-fit:cover;object-position:center top;border-radius:2px;background:#251F1B}
+.tlfigs.one{grid-template-columns:1fr;max-width:480px}
+.tlfigs.one img{height:auto;max-height:420px;object-fit:contain;object-position:left top}
+.tlfigs figcaption{font-size:12.5px;line-height:1.4;color:var(--dust);margin-top:6px}
+
 .entry{display:grid;grid-template-columns:132px 1fr;gap:26px;padding:26px 0;border-top:1px solid #251F1B}
 .entry:first-of-type{border-top:0}
 .date{font-family:'Archivo Black';font-size:15px;color:var(--yellow);line-height:1.3;padding-top:3px}
@@ -187,7 +194,7 @@ body{padding-bottom:66px}
 </div></nav>
 <nav class="botnav" id="botnav" aria-label="Era navigation"><div class="bwrap">
   <span class="bnlab">Jump to</span>
-  <div class="bnitems erabar"><a href="#era1"><span class="bnum">1</span><span class="blab">Pre-1865</span></a><a href="#era2"><span class="bnum">2</span><span class="blab">1865–1877</span></a><a href="#era3"><span class="bnum">3</span><span class="blab">1875–1900</span></a><a href="#era4"><span class="bnum">4</span><span class="blab">1900s–1940s</span></a><a href="#era5"><span class="bnum">5</span><span class="blab">1950s–1970s</span></a><a href="#era6"><span class="bnum">6</span><span class="blab">1980s–1990s</span></a><a href="#era7"><span class="bnum">7</span><span class="blab">2000s–2010s</span></a><a href="#era8"><span class="bnum">8</span><span class="blab">2020–2024</span></a><a href="#era9"><span class="bnum">9</span><span class="blab">2020s–Now</span></a></div>
+  <div class="bnitems erabar"><a href="#era1"><span class="bnum">1</span><span class="blab">Pre-1865</span></a><a href="#era2"><span class="bnum">2</span><span class="blab">1865–1877</span></a><a href="#era3"><span class="bnum">3</span><span class="blab">1875–1900</span></a><a href="#era4"><span class="bnum">4</span><span class="blab">1896–1940s</span></a><a href="#era5"><span class="bnum">5</span><span class="blab">1950s–1970s</span></a><a href="#era6"><span class="bnum">6</span><span class="blab">1980s–1990s</span></a><a href="#era7"><span class="bnum">7</span><span class="blab">2000s–2010s</span></a><a href="#era8"><span class="bnum">8</span><span class="blab">2020–2024</span></a><a href="#era9"><span class="bnum">9</span><span class="blab">2020s–Now</span></a></div>
   <div class="bntools">
     <button id="eprev">&larr;</button>
     <button id="enext">&rarr;</button>
@@ -222,11 +229,13 @@ body{padding-bottom:66px}
 <section class="era" id="era2">
   <div class="era-head"><span class="era-num">2</span><span class="era-name">The Reconstruction Era</span><span class="era-dates">1865–1877</span></div>
   <p class="eraintro">For a brief window, Black communities across the South built and ran things: schools, hospitals, town governments, local law. This era is the high-water mark of what was possible &mdash; and the beginning of the legal architecture built to end it.</p>
+      <div class="tlfigs one"><figure><img src="img/timeline/freedmens-school-1868.jpg" alt="A freedmen&rsquo;s school, 1868. National Museum of African American History and Culture" loading="lazy"><figcaption>A freedmen&rsquo;s school, 1868. National Museum of African American History and Culture</figcaption></figure></div>
   <div class="entry">
     <div class="date">April 9, 1865</div>
     <div>
       <h3>The End of the Civil War</h3>
       <p>Communities of newly freed and formerly enslaved people began building power for themselves. They built schools and hospitals. They gained political, social, and economic power. They were elected to local and state offices, passed legislation, voted, and organized for one another.</p>
+      <div class="tlfigs"><figure><img src="img/timeline/louisiana-delegates-1868.jpg" alt="Oscar J. Dunn and African American delegates to the Louisiana constitutional convention, 1868" loading="lazy"><figcaption>Oscar J. Dunn and African American delegates to the Louisiana constitutional convention, 1868</figcaption></figure><figure><img src="img/timeline/first-black-congressmen-1872.jpg" alt="&ldquo;The first colored senator and representatives&rdquo; in Congress, 1872" loading="lazy"><figcaption>&ldquo;The first colored senator and representatives&rdquo; in Congress, 1872</figcaption></figure><figure><img src="img/timeline/sc-legislature.jpg" alt="Members of South Carolina&rsquo;s first legislature after the war" loading="lazy"><figcaption>Members of South Carolina&rsquo;s first legislature after the war</figcaption></figure></div>
     </div>
   </div>
   <div class="entry">
@@ -244,15 +253,20 @@ body{padding-bottom:66px}
       <a class="anchorlink" href="place-virginia.html">&rarr; this is Virginia&rsquo;s story</a>
     </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · April 13, 1873</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Colfax Massacre</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">During disputes over the gubernatorial and local parish elections, Black men occupied and set out to defend the courthouse in Colfax, Louisiana, in an attempt to prevent a white supremacist takeover of their local governance. In response, a large white mob &mdash; including members of the Ku Klux Klan and former Confederate soldiers &mdash; surrounded them, fired a cannon, and set fire to the courthouse. Around 150 Black men were murdered defending local power. The Colfax massacre was the deadliest single incident of racial violence of the Reconstruction era.</p>
+  <div class="entry">
+    <div class="date">April 13, 1873</div>
+    <div>
+      <h3>The Colfax Massacre</h3>
+      <p>During disputes over the gubernatorial and local parish elections, Black men occupied and set out to defend the courthouse in Colfax, Louisiana, in an attempt to prevent a white supremacist takeover of their local governance. In response, a large white mob &mdash; including members of the Ku Klux Klan and former Confederate soldiers &mdash; surrounded them, fired a cannon, and set fire to the courthouse. Around 150 Black men were murdered defending local power. The Colfax massacre was the deadliest single incident of racial violence of the Reconstruction era.</p>
+      <div class="tlfigs one"><figure><img src="img/timeline/colfax-1873.jpg" alt="The Colfax Massacre, 1873" loading="lazy"><figcaption>The Colfax Massacre, 1873</figcaption></figure></div>
+    </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1876</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">United States v. Cruikshank</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">After the Colfax massacre, the United States Supreme Court ruled that the federal government could not prosecute private individuals for violating Black citizens&rsquo; rights. According to the Court, the power to protect Black citizens against white supremacist violence and stolen power was held solely by state governments &mdash; which in many places were led near exclusively by white supremacists. Federal protection withdrew, and the states that had just been recaptured were handed sole authority over the people they were disenfranchising.</p>
+  <div class="entry">
+    <div class="date">1876</div>
+    <div>
+      <h3>United States v. Cruikshank</h3>
+      <p>After the Colfax massacre, the United States Supreme Court ruled that the federal government could not prosecute private individuals for violating Black citizens&rsquo; rights. According to the Court, the power to protect Black citizens against white supremacist violence and stolen power was held solely by state governments &mdash; which in many places were led near exclusively by white supremacists. Federal protection withdrew, and the states that had just been recaptured were handed sole authority over the people they were disenfranchising.</p>
+    </div>
   </div>
 </section>
 
@@ -275,32 +289,48 @@ body{padding-bottom:66px}
       <p>White paramilitary coalitions across the country calling themselves “Redeemers” took back control of state legislatures and used them to abolish township governments, violently destroying the multiracial democracy Black communities were beginning to build. They rewrote state constitutions to eliminate Black-led governance. Their strategy was disenfranchisement, retrenchment, and the weakening of Black power in order to rebuild their own.</p>
     </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1890</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Mississippi Constitution</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">Mississippi wrote a constitution designed to disenfranchise Black voters and strip them of any say in their daily lives without explicitly saying so — poll taxes, literacy tests, an understanding clause. Within twenty years, state after state copied it nearly word for word. <strong>One state writes a template; the rest adopt it.</p>
+  <div class="entry">
+    <div class="date">1890</div>
+    <div>
+      <h3>The Mississippi Constitution</h3>
+      <p>Mississippi wrote a constitution designed to disenfranchise Black voters and strip them of any say in their daily lives without explicitly saying so — poll taxes, literacy tests, an understanding clause. Within twenty years, state after state copied it nearly word for word. <strong>One state writes a template; the rest adopt it.</strong></p>
+    </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1898 · highest priority</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Wilmington Coup</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">A duly elected, multiracial local government in Wilmington, North Carolina was overthrown by armed force. Officials were driven out of the city at gunpoint, Black residents were massacred, and the state's largest Black-majority city was permanently remade. It is the only successful coup d'état against a local government in American history.</p>
+  <div class="entry">
+    <div class="date">1898</div>
+    <div>
+      <h3>The Wilmington Coup</h3>
+      <p>A duly elected, multiracial local government in Wilmington, North Carolina was overthrown by armed force. Officials were driven out of the city at gunpoint, Black residents were massacred, and the state's largest Black-majority city was permanently remade. It is the only successful coup d'état against a local government in American history.</p>
+    </div>
   </div>
 </section>
 
 <!-- ERA 4 -->
 <section class="era" id="era4">
-  <div class="era-head"><span class="era-num">4</span><span class="era-name">Jim Crow Era</span><span class="era-dates">1900s–1940s</span></div>
+  <div class="era-head"><span class="era-num">4</span><span class="era-name">Jim Crow Era</span><span class="era-dates">1896–1940s</span></div>
   <p class="eraintro">Jim Crow is usually told as a story of signs and segregated rooms. It was also a story about who was allowed to govern. The court decisions and state constitutions of this era made state override of local Black political power routine rather than exceptional.</p>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1896</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">Plessy v. Ferguson</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">The United States Supreme Court ruled that &ldquo;separate but equal&rdquo; was constitutional &mdash; and in so doing not only approved separate bathrooms, separate schools and other overt practices of racial segregation and humiliation, but underscored the broad police power of state governments to control and regulate local health, safety and public order. Plessy established the legal architecture that made state override of local Black political power routine rather than exceptional.</p>
+  <div class="entry">
+    <div class="date">1896</div>
+    <div>
+      <h3>Plessy v. Ferguson</h3>
+      <p>The United States Supreme Court ruled that &ldquo;separate but equal&rdquo; was constitutional &mdash; and in so doing not only approved separate bathrooms, separate schools and other overt practices of racial segregation and humiliation, but underscored the broad police power of state governments to control and regulate local health, safety and public order. Plessy established the legal architecture that made state override of local Black political power routine rather than exceptional.</p>
+      <div class="tlfigs"><figure><img src="img/timeline/plessy-judgment-1896.jpg" alt="The judgment in Plessy v. Ferguson, 1896" loading="lazy"><figcaption>The judgment in <em>Plessy v. Ferguson</em>, 1896</figcaption></figure><figure><img src="img/timeline/segregated-waiting-room-1930s.jpg" alt="Sign from a segregated waiting room, 1930s. National Museum of African American History and Culture" loading="lazy"><figcaption>Sign from a segregated waiting room, 1930s. National Museum of African American History and Culture</figcaption></figure></div>
+    </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1901</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">The Alabama Constitution</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">Written explicitly — by its framers' own stated admission — to establish white supremacy, and drafted to strip local governing authority so thoroughly that Alabama counties still cannot act without state legislative permission today.</p>
-    <a class="anchorlink" href="place-virginia.html">&rarr; a throughline to the legal regime in Virginia</a>
+  <div class="entry">
+    <div class="date">1901</div>
+    <div>
+      <h3>The Alabama Constitution</h3>
+      <p>Written explicitly — by its framers' own stated admission — to establish white supremacy, and drafted to strip local governing authority so thoroughly that Alabama counties still cannot act without state legislative permission today.</p>
+      <a class="anchorlink" href="place-virginia.html">&rarr; a throughline to the legal regime in Virginia</a>
+    </div>
+  </div>
+  <div class="entry">
+    <div class="date">1944</div>
+    <div>
+      <h3>Right to Work Laws</h3>
+      <p>In Florida and Arkansas, a series of laws designed to strip workers of the power to organize made it harder for workers to form unions and negotiate for wages, benefits, and conditions. Rooted in racial capitalism, designed to keep Black and white workers from organizing together for power, and promoted by corporate-funded groups and segregationist politicians. These laws were an early example of how state laws were used to steal local Black and brown power.</p>
+      </div>
   </div>
 </section>
 
@@ -310,25 +340,21 @@ body{padding-bottom:66px}
   <p class="eraintro">As Black communities won at the ballot box and in the courts, states answered by taking the decisions away from the places where those wins were happening &mdash; schools, workplaces, city councils.</p>
   <blockquote class="sidequote">&ldquo;The methods have changed but the purpose remains the same.&rdquo;<cite>&mdash; <em>From The Roots</em>, Advancement Project</cite></blockquote>
   <div class="entry">
-    <div class="date">1944</div>
-    <div>
-      <h3>Right to Work Laws</h3>
-      <p>In Florida and Arkansas, a series of laws designed to strip workers of the power to organize made it harder for workers to form unions and negotiate for wages, benefits, and conditions. Rooted in racial capitalism, designed to keep Black and white workers from organizing together for power, and promoted by corporate-funded groups and segregationist politicians. These laws were an early example of how state laws were used to steal local Black and brown power.</p>
-      </div>
-  </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1956–1959 · high priority</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">Massive Resistance</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">After <em>Brown v. Board of Education</em> overruled <em>Plessy v. Ferguson</em> and ruled that &ldquo;separate,&rdquo; segregated schools were in fact not &ldquo;equal,&rdquo; Virginia&rsquo;s legislature stripped local school boards of the authority to desegregate and seized control of pupil assignment statewide. When some localities moved to integrate anyway, the state closed their public schools entirely rather than let a local decision stand.</p>
-    <a class="anchorlink" href="place-virginia.html">&rarr; The continuing fight for home rule in Virginia</a>
-    <a class="anchorlink" href="place-houston.html">&rarr; The active state takeover of schools in Houston</a>
-  </div>
-  <div class="entry">
     <div class="date">1953</div>
     <div>
       <h3>Landmark Reforms Surrounding Home Rule</h3>
       <p>The American Municipal Association — later the National League of Cities — published the most recent proposed reform of home rule, prompting states to update their constitutions and broaden local initiative power. <em>Modern Constitutional Provisions for Municipal Home Rule</em> reversed the traditional Dillon's Rule assumption, holding that home rule should be a default rather than something states granted. But it also held that states should keep broad authority to structure or override local law.</p>
       </div>
+  </div>
+  <div class="entry">
+    <div class="date">1956–1959</div>
+    <div>
+      <h3>Massive Resistance</h3>
+      <p>After <em>Brown v. Board of Education</em> overruled <em>Plessy v. Ferguson</em> and ruled that &ldquo;separate,&rdquo; segregated schools were in fact not &ldquo;equal,&rdquo; Virginia&rsquo;s legislature stripped local school boards of the authority to desegregate and seized control of pupil assignment statewide. When some localities moved to integrate anyway, the state closed their public schools entirely rather than let a local decision stand.</p>
+      <div class="tlfigs one"><figure><img src="img/timeline/segregationist-voting-guide-1957.jpg" alt="A segregationist voting guide, 1957" loading="lazy"><figcaption>A segregationist voting guide, 1957</figcaption></figure></div>
+      <a class="anchorlink" href="place-virginia.html">&rarr; The continuing fight for home rule in Virginia</a>
+      <a class="anchorlink" href="place-houston.html">&rarr; The active state takeover of schools in Houston</a>
+    </div>
   </div>
   <div class="entry">
     <div class="date">1975–1980</div>
@@ -350,11 +376,13 @@ body{padding-bottom:66px}
       <p>When local governments began adopting smoke-free public areas for public health, the tobacco industry responded by promoting and using the same laws that enabled stolen power to protect its own bottom line. Many of the anti-smoking regulations they targeted were in majority-Black cities.</p>
     </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 1989 · high priority</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">New Jersey takes over Jersey City schools</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">The first state takeover of a local school district in American history. Within a decade the mechanism had spread to Cleveland, Baltimore, Chicago, Detroit, and dozens more — overwhelmingly districts serving Black and brown students. <strong></strong></p>
-    <a class="anchorlink" href="place-houston.html">&rarr; Explore how this is happening in Houston today</a>
+  <div class="entry">
+    <div class="date">1989</div>
+    <div>
+      <h3>New Jersey takes over Jersey City schools</h3>
+      <p>The first state takeover of a local school district in American history. Within a decade the mechanism had spread to Cleveland, Baltimore, Chicago, Detroit, and dozens more — overwhelmingly districts serving Black and brown students. <strong></strong></p>
+      <a class="anchorlink" href="place-houston.html">&rarr; Explore how this is happening in Houston today</a>
+    </div>
   </div>
 </section>
 
@@ -377,11 +405,13 @@ body{padding-bottom:66px}
       <p>Florida passed a bill threatening lawsuits against city officials who enact gun safety rules. Now located in section 790.33 of the Florida Statutes, the law severely restricts local authority over firearms. Any existing or future local action is declared null and void, and local officials who attempt to legislate can be held personally liable and removed from office.</p>
       </div>
   </div>
-  <div class="prop">
-    <div class="lbl">Proposed addition · 2011–2014 · high priority</div>
-    <h3 style="font-family:Fraunces;font-weight:700;font-size:23px;margin-bottom:9px">Michigan's emergency managers · Flint</h3>
-    <p style="color:#DCD0BC;font-size:16.5px;max-width:66ch">Michigan gave the state power to install appointed emergency managers who could override or replace elected local government outright. At the peak of this effort, a majority of Michigan&rsquo;s Black residents lived under a government they had not elected &mdash; while most white residents remained in control of their lives and decisions. In Flint, an appointed manager&rsquo;s decision poisoned a city&rsquo;s water supply. Voters repealed the law by referendum in 2012; the legislature passed a near-identical replacement weeks later.</p>
-    <a class="anchorlink" href="place-jackson.html">&rarr; Explore the current state takeover of majority-Black Jackson, Mississippi&rsquo;s water, courts and police</a>
+  <div class="entry">
+    <div class="date">2011–2014</div>
+    <div>
+      <h3>Michigan's emergency managers · Flint</h3>
+      <p>Michigan gave the state power to install appointed emergency managers who could override or replace elected local government outright. At the peak of this effort, a majority of Michigan&rsquo;s Black residents lived under a government they had not elected &mdash; while most white residents remained in control of their lives and decisions. In Flint, an appointed manager&rsquo;s decision poisoned the city&rsquo;s water supply. Voters repealed the law by referendum in 2012; the legislature passed a near-identical replacement weeks later.</p>
+      <a class="anchorlink" href="place-jackson.html">&rarr; Explore the current state takeover of majority-Black Jackson, Mississippi&rsquo;s water, courts and police</a>
+    </div>
   </div>
   <div class="entry">
     <div class="date">2016</div>
@@ -394,8 +424,8 @@ body{padding-bottom:66px}
 
 <!-- ERA 8 -->
 <section class="era" id="era8">
-  <div class="era-head"><span class="era-num">8</span><span class="era-name">Abusive Preemption on the Rise</span><span class="era-dates">2020–2024</span></div>
-  <p class="eraintro">The uprisings of 2020 were met with legislation. This is the period when the volume becomes impossible to explain as coincidence: hundreds of bills a session, filed across dozens of states, on the same handful of subjects.</p>
+  <div class="era-head"><span class="era-num">8</span><span class="era-name">Preemption on the Rise</span><span class="era-dates">2020–2024</span></div>
+  <p class="eraintro">The uprisings of 2020 were met with legislative backlash. This is the period when the volume becomes impossible to explain as coincidence: hundreds of bills a session, filed across dozens of states, on the same handful of subjects.</p>
   <div class="entry">
     <div class="date">Summer–Fall 2020</div>
     <div>
@@ -435,7 +465,7 @@ body{padding-bottom:66px}
     <div class="date">2023</div>
     <div>
       <h3>Texas takes Houston · Mississippi takes Jackson's courts</h3>
-      <p>The Texas Education Agency removed Houston&rsquo;s elected school board and installed a Board of Managers it appointed, to steal power from local schools educating 180,000+ students, most of them Black and Latino. In the same period, Mississippi&rsquo;s HB 1020 installed state-appointed judges and prosecutors in Hinds County (Jackson) and expanded a state-controlled police force.</p>
+      <p>The Texas Education Agency removed Houston&rsquo;s elected school board and installed a Board of Managers it appointed, to steal power from local schools educating 180,000+ students, most of them Black and Latine. In the same period, Mississippi&rsquo;s HB 1020 installed state-appointed judges and prosecutors in Hinds County (Jackson) and expanded a state-controlled police force.</p>
       <a class="anchorlink" href="place-houston.html">&rarr; Educational theft in Houston</a>
     <a class="anchorlink" href="place-jackson.html">&rarr; State police takeover in Jackson, Mississippi</a>
     </div>
@@ -444,7 +474,7 @@ body{padding-bottom:66px}
     <div class="date">January 20, 2025</div>
     <div>
       <h3>Endless Legislative Attacks on Communities Through Preemption</h3>
-      <p>As of May 2025, the Local Solutions Support Center had tracked more than 685 introduced preemption bills, with 58 passed and 24 awaiting governors' signatures. The largest single category concerns immigration enforcement: many states have banned their cities from declaring themselves sanctuary jurisdictions or from refusing 287(g) agreements — the arrangements that pull local police and sheriffs into federal immigration enforcement. Other categories include bans on DEI programs in higher education, public health, “Death Star” bills that eliminate local authority across a wide range of issues at once, and elections.</p>
+      <p>As of May 2025, the Local Solutions Support Center had tracked more than 685 introduced preemption bills, with 58 passed and 24 awaiting governors' signatures. Immigration enforcement is the largest single category of bills passed: many states have banned their cities from declaring themselves sanctuary jurisdictions or from refusing 287(g) agreements — the arrangements that pull local police and sheriffs into federal immigration enforcement. Other categories include bans on DEI programs in higher education, public health, “Death Star” bills that eliminate local authority across a wide range of issues at once, and elections.</p>
     </div>
   </div>
   <div class="entry">
@@ -465,8 +495,7 @@ body{padding-bottom:66px}
 
 
 <section class="mv" id="whythese" style="color:#EDE3D2"><h2>One more thing you should be able to see from here.</h2>
-  <p>The pattern is technically partisan, yes — Republican legislatures overriding Democratic cities. That framing isn't wrong, and it isn't enough. It flattens what is actually happening.</p>
-  <p>The cities on the receiving end are disproportionately Black, brown, and immigrant. The legal mechanism has been aimed at the same communities for a hundred and fifty years — through Reconstruction, Redemption, Jim Crow, right-to-work, Massive Resistance, emergency managers, and into this legislative session.</p>
+  <p>The cities on the receiving end of stolen power are disproportionately Black, brown, and immigrant. The legal mechanism has been aimed at the same communities for a hundred and fifty years — through Reconstruction, Redemption, Jim Crow, right-to-work, Massive Resistance, emergency managers, and into this legislative session.</p>
   <div class="banner"><p>It is a racial-control story wearing a partisan suit.</p></div></section>
 <footer class="pcpfoot">
   <div class="fclose"><div class="cwrap"><p>They don&rsquo;t attack what doesn&rsquo;t matter.</p></div></div>
@@ -483,7 +512,7 @@ body{padding-bottom:66px}
   </div>
   <div class="fbase"><div class="cwrap">
     <span>Advancement Project &middot; People-Centered Power &middot; built with Zealous</span>
-    <span>Prototype &middot; August 2026</span>
+    <span>Prototype &middot; September 2026</span>
   </div></div>
 </footer>
 <script>
